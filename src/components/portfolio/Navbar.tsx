@@ -23,6 +23,7 @@ export const Navbar = () => {
     { key: "skills", href: "#skills" },
     { key: "projects", href: "#projects" },
     { key: "experience", href: "#experience" },
+    { key: "education", href: "#education" },
     { key: "blog", href: "/blog" },
     { key: "contact", href: "#contact" },
   ];

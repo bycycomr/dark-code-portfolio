@@ -14,8 +14,8 @@ const contactLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/omer-dogan",
-    label: "linkedin.com/in/omer-dogan",
+    href: "https://www.linkedin.com/in/omer-dogan-bycycomr/",
+    label: "linkedin.com/in/omer-dogan-bycycomr",
   },
   {
     name: "GitHub",

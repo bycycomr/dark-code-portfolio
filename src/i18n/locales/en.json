@@ -5,6 +5,7 @@
     "skills": "Skills",
     "projects": "Projects",
     "experience": "Experience",
+    "education": "Education",
     "blog": "Blog",
     "contact": "Contact"
   },
@@ -41,15 +42,20 @@
     "viewProject": "View Project",
     "viewCode": "View Code",
     "code": "Code",
-    "demo": "Demo"
+    "demo": "Demo",
+    "info": "Info"
   },
   "experience": {
     "title": "Experience",
     "number": "04."
   },
+  "education": {
+    "title": "Education",
+    "number": "05."
+  },
   "blog": {
     "title": "Blog",
-    "number": "05.",
+    "number": "06.",
     "description": "Thoughts, tutorials, and insights about web development, software engineering, and technology.",
     "readMore": "Read More",
     "backToBlog": "Back to Blog",
@@ -60,7 +66,7 @@
   },
   "contact": {
     "title": "Get In Touch",
-    "number": "06.",
+    "number": "07.",
     "description": "I'm currently open to internships, full-time roles, and exciting collaborations. Whether you have a project in mind, a job opportunity, or just want to connect, I'd love to hear from you!",
     "sendMessage": "Send Me a Message",
     "name": "Name",

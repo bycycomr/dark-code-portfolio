@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Info } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -10,16 +10,16 @@ const projects = [
     name: "DigiCampus - DigiEduHack 2024",
     description: "Local Winner project in the international DigiEduHack 2024 hackathon organized by the European Union. Led the project management for DigiCampus, managing all stages from idea development to web development, content creation, and team coordination.",
     tech: ["Web Development", "Project Management", "Team Leadership"],
-    github: "#",
-    demo: "#",
+    info: "https://digieduhack.com/solutions/digicampus",
+    demo: "https://digicampus.doktortaku.com/",
     achievement: "🏆 Local Winner",
   },
   {
     name: "Pink - Ankü Game Jam",
     description: "2nd place winner out of 20 teams. Led the team and managed the project. Developed 'Pink' game in 48 hours, successfully completing game design, software development, level design, and project management processes.",
     tech: ["Game Development", "Game Design", "Project Management"],
-    github: "#",
-    demo: "https://example.com/pink-game",
+    info: "https://comp.eng.ankara.edu.tr/2024/05/14/anku-game-jam-sona-erdi/",
+    demo: "https://bycycomr.itch.io/pink",
     achievement: "🥈 2nd Place",
   },
 ];
@@ -75,9 +75,9 @@ export const Projects = () => {
 
                   <div className="flex gap-3">
                     <Button variant="secondary" size="sm" className="flex-1" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
-                        {t("projects.code")}
+                      <a href={project.info} target="_blank" rel="noopener noreferrer">
+                        <Info className="mr-2 h-4 w-4" />
+                        {t("projects.info")}
                       </a>
                     </Button>
                     <Button size="sm" className="flex-1 gradient-bg text-white hover:opacity-90" asChild>

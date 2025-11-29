@@ -5,6 +5,7 @@
     "skills": "Yetenekler",
     "projects": "Projeler",
     "experience": "Deneyim",
+    "education": "Eğitim",
     "blog": "Blog",
     "contact": "İletişim"
   },
@@ -41,15 +42,20 @@
     "viewProject": "Projeyi Görüntüle",
     "viewCode": "Kodu Görüntüle",
     "code": "Kod",
-    "demo": "Demo"
+    "demo": "Demo",
+    "info": "Bilgi"
   },
   "experience": {
     "title": "Deneyim",
     "number": "04."
   },
+  "education": {
+    "title": "Eğitim",
+    "number": "05."
+  },
   "blog": {
     "title": "Blog",
-    "number": "05.",
+    "number": "06.",
     "description": "Web geliştirme, yazılım mühendisliği ve teknoloji hakkında düşünceler, öğreticiler ve içgörüler.",
     "readMore": "Devamını Oku",
     "backToBlog": "Blog'a Dön",
@@ -60,7 +66,7 @@
   },
   "contact": {
     "title": "İletişime Geçin",
-    "number": "06.",
+    "number": "07.",
     "description": "Şu anda staj, tam zamanlı pozisyonlar ve heyecan verici işbirlikleri için açığım. Aklınızda bir proje, iş fırsatı varsa veya sadece bağlantı kurmak istiyorsanız, sizden haber almayı çok isterim!",
     "sendMessage": "Bana Mesaj Gönder",
     "name": "İsim",

@@ -1,22 +1,13 @@
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 
 const experiences = [
   {
-    role: "Bilgisayar Mühendisliği",
-    company: "Ankara Üniversitesi",
-    period: "4/4 - Devam Ediyor",
-    points: [
-      "Yazılım geliştirme, algoritmalar, veri yapıları, yapay zeka, işletim sistemleri alanlarında kapsamlı eğitim",
-      "Çeşitli projeler ve araştırmalar ile sektöre yönelik deneyim kazanımı",
-    ],
-    isEducation: true,
-  },
-  {
     role: "Proje Çalışanı",
     company: "Nurol Teknoloji",
+    companyLink: "https://www.nurolteknoloji.com/tr",
     period: "InnovatioNTogether Platform",
     points: [
       "Nurol Holding'in açık inovasyon platformu InnovatioNTogether kapsamında aktif rol aldım",
@@ -26,6 +17,7 @@ const experiences = [
   {
     role: "Bilgi İşlem Aday Mühendisi",
     company: "Intecro Robotics",
+    companyLink: "https://intecro.com.tr/tr/",
     period: "IT Support & System Administration",
     points: [
       "PC ve çevre birimlerinin kurulumu, donanımsal arızaların tespiti ve giderilmesi",
@@ -38,6 +30,7 @@ const experiences = [
   {
     role: "Front-end & DevOps Stajyeri",
     company: "Serebellum Bilişim Danışmanlık",
+    companyLink: "https://serebellum.com/",
     period: "Frontend Development & DevOps",
     points: [
       "React ile front-end uygulamaları geliştirdim ve kullanıcı odaklı arayüzler tasarladım",
@@ -48,6 +41,7 @@ const experiences = [
   {
     role: "Başkan Yardımcısı",
     company: "Ankara Üniversitesi YAZGİT",
+    companyLink: "https://www.yazgit.com.tr/",
     period: "AI & Image Processing Community",
     points: [
       "Sektörel etkinlikler, teknik geziler ve konferanslar organize ettim",
@@ -59,6 +53,7 @@ const experiences = [
   {
     role: "Yapay Zeka Eğitmeni",
     company: "T3 Vakfı Deneyap Teknoloji Atölyeleri",
+    companyLink: "https://www.deneyap.org/tr/",
     period: "AI Education for Middle School",
     points: [
       "Ortaokul öğrencilerine 8 haftalık yapay zeka kursu verdim",
@@ -104,10 +99,18 @@ export const Experience = () => {
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-foreground">{exp.role}</h3>
-                      <p className="text-primary font-semibold">{exp.company}</p>
+                      <a 
+                        href={exp.companyLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary font-semibold hover:underline inline-flex items-center gap-1"
+                      >
+                        {exp.company}
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground text-sm font-mono">
-                      {exp.isEducation ? <GraduationCap className="h-4 w-4" /> : <Briefcase className="h-4 w-4" />}
+                      <Briefcase className="h-4 w-4" />
                       {exp.period}
                     </div>
                   </div>
