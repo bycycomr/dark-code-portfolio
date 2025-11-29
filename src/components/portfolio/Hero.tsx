@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Download, ArrowDown, MapPin, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import heroBackground from "@/assets/hero-background.jpg";
 
 export const Hero = () => {
   const scrollToProjects = () => {
@@ -9,8 +10,18 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={heroBackground} 
+          alt="" 
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background" />
+      </div>
+
+      <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
           <motion.div
             className="lg:col-span-2"
