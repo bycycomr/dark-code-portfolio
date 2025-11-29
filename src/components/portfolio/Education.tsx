@@ -3,12 +3,16 @@ import { GraduationCap, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 
+// Import logo
+import ankaraUniLogo from "@/logos/ankarauni.png";
+
 const educations = [
   {
     degree: "Bilgisayar Mühendisliği",
     school: "Ankara Üniversitesi",
     period: "4/4 - Devam Ediyor",
     link: "https://www.ankara.edu.tr/",
+    logo: ankaraUniLogo,
     points: [
       "Yazılım geliştirme, algoritmalar, veri yapıları, yapay zeka, işletim sistemleri alanlarında kapsamlı eğitim",
       "Çeşitli projeler ve araştırmalar ile sektöre yönelik deneyim kazanımı",
@@ -19,6 +23,7 @@ const educations = [
     school: "Cemil Meriç Fen Lisesi",
     period: "Ortalama: 89/100 | YKS Sayısal: 16.134",
     link: "https://cemilmericfenlisesi.meb.k12.tr/",
+    logo: null,
     points: [
       "Fen ve matematik odaklı güçlü akademik altyapı",
       "Bilimsel düşünme ve problem çözme becerileri",
@@ -59,22 +64,38 @@ export const Education = () => {
                 <div className="absolute left-0 top-6 w-3 h-3 bg-accent rounded-full border-4 border-background hidden sm:block -translate-x-[5px]" />
 
                 <Card className="p-6 glass border-2 border-accent/10 hover:border-accent transition-all duration-300 sm:ml-8">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground">{edu.degree}</h3>
-                      <a 
-                        href={edu.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-accent font-semibold hover:underline inline-flex items-center gap-1"
-                      >
-                        {edu.school}
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
+                  <div className="flex gap-4 mb-4">
+                    {/* School Logo */}
+                    <div className="w-14 h-14 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
+                      {edu.logo ? (
+                        <img 
+                          src={edu.logo} 
+                          alt={edu.school}
+                          className="w-10 h-10 object-contain"
+                        />
+                      ) : (
+                        <GraduationCap className="w-8 h-8 text-accent" />
+                      )}
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground text-sm font-mono">
-                      <GraduationCap className="h-4 w-4" />
-                      {edu.period}
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                        <div>
+                          <h3 className="text-xl font-bold text-foreground">{edu.degree}</h3>
+                          <a 
+                            href={edu.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-accent font-semibold hover:underline inline-flex items-center gap-1"
+                          >
+                            {edu.school}
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                        </div>
+                        <div className="flex items-center gap-2 text-muted-foreground text-sm font-mono">
+                          <GraduationCap className="h-4 w-4" />
+                          {edu.period}
+                        </div>
+                      </div>
                     </div>
                   </div>
 

@@ -6,6 +6,7 @@
     "projects": "Projeler",
     "experience": "Deneyim",
     "education": "Eğitim",
+    "certificates": "Sertifikalar",
     "blog": "Blog",
     "contact": "İletişim"
   },
@@ -53,9 +54,14 @@
     "title": "Eğitim",
     "number": "05."
   },
+  "certificates": {
+    "title": "Sertifikalar",
+    "number": "06.",
+    "view": "Sertifikayı Görüntüle"
+  },
   "blog": {
     "title": "Blog",
-    "number": "06.",
+    "number": "07.",
     "description": "Web geliştirme, yazılım mühendisliği ve teknoloji hakkında düşünceler, öğreticiler ve içgörüler.",
     "readMore": "Devamını Oku",
     "backToBlog": "Blog'a Dön",
@@ -66,17 +72,23 @@
   },
   "contact": {
     "title": "İletişime Geçin",
-    "number": "07.",
-    "description": "Şu anda staj, tam zamanlı pozisyonlar ve heyecan verici işbirlikleri için açığım. Aklınızda bir proje, iş fırsatı varsa veya sadece bağlantı kurmak istiyorsanız, sizden haber almayı çok isterim!",
-    "sendMessage": "Bana Mesaj Gönder",
+    "number": "08.",
+    "description": "Şu anda staj, yarı zamanlı, tam zamanlı pozisyonlar ve heyecan verici işbirlikleri için açığım. Aklınızda bir proje, iş fırsatı varsa veya sadece bağlantı kurmak istiyorsanız, sizden haber almayı çok isterim!",
+    "formTitle": "Mesaj Gönderin",
+    "connectTitle": "Bağlantı Kurun",
+    "sendMessage": "Mesaj Gönder",
     "name": "İsim",
+    "namePlaceholder": "Adınız",
     "email": "E-posta",
+    "emailPlaceholder": "email@adresiniz.com",
     "message": "Mesaj",
+    "messagePlaceholder": "Mesajınız...",
     "sending": "Gönderiliyor...",
-    "success": "Mesaj başarıyla gönderildi!",
+    "success": "E-posta uygulaması açıldı!",
+    "successDesc": "Lütfen e-postayı mail uygulamanızdan gönderin.",
     "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
-    "footer": "React + TypeScript + Tailwind CSS ile tasarlandı ve geliştirildi",
-    "copyright": "© 2024 Ömer Doğan. Tüm hakları saklıdır."
+    "footer": "",
+    "copyright": "© 2025 Ömer Doğan. Tüm hakları saklıdır."
   },
   "common": {
     "loading": "Yükleniyor...",

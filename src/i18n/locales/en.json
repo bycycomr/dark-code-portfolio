@@ -6,6 +6,7 @@
     "projects": "Projects",
     "experience": "Experience",
     "education": "Education",
+    "certificates": "Certificates",
     "blog": "Blog",
     "contact": "Contact"
   },
@@ -53,9 +54,14 @@
     "title": "Education",
     "number": "05."
   },
+  "certificates": {
+    "title": "Certificates",
+    "number": "06.",
+    "view": "View Certificate"
+  },
   "blog": {
     "title": "Blog",
-    "number": "06.",
+    "number": "07.",
     "description": "Thoughts, tutorials, and insights about web development, software engineering, and technology.",
     "readMore": "Read More",
     "backToBlog": "Back to Blog",
@@ -66,17 +72,23 @@
   },
   "contact": {
     "title": "Get In Touch",
-    "number": "07.",
-    "description": "I'm currently open to internships, full-time roles, and exciting collaborations. Whether you have a project in mind, a job opportunity, or just want to connect, I'd love to hear from you!",
-    "sendMessage": "Send Me a Message",
+    "number": "08.",
+    "description": "I'm currently open to internships, part-time, full-time roles, and exciting collaborations. Whether you have a project in mind, a job opportunity, or just want to connect, I'd love to hear from you!",
+    "formTitle": "Send a Message",
+    "connectTitle": "Connect With Me",
+    "sendMessage": "Send Message",
     "name": "Name",
+    "namePlaceholder": "Your name",
     "email": "Email",
+    "emailPlaceholder": "your@email.com",
     "message": "Message",
+    "messagePlaceholder": "Your message...",
     "sending": "Sending...",
-    "success": "Message sent successfully!",
+    "success": "Email client opened!",
+    "successDesc": "Please send the email from your mail application.",
     "error": "Failed to send message. Please try again.",
-    "footer": "Designed & Built with React + TypeScript + Tailwind CSS",
-    "copyright": "© 2024 Ömer Doğan. All rights reserved."
+    "footer": "",
+    "copyright": "© 2025 Ömer Doğan. All rights reserved."
   },
   "common": {
     "loading": "Loading...",

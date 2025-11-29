@@ -24,6 +24,7 @@ export const Navbar = () => {
     { key: "projects", href: "#projects" },
     { key: "experience", href: "#experience" },
     { key: "education", href: "#education" },
+    { key: "certificates", href: "#certificates" },
     { key: "blog", href: "/blog" },
     { key: "contact", href: "#contact" },
   ];
