@@ -1,41 +1,76 @@
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import { Briefcase, GraduationCap } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const experiences = [
   {
-    role: "Software Developer Intern",
-    company: "Tech Company Inc.",
-    period: "Jun 2023 - Present",
+    role: "Bilgisayar Mühendisliği",
+    company: "Ankara Üniversitesi",
+    period: "4/4 - Devam Ediyor",
     points: [
-      "Developed and maintained React components for customer-facing web applications",
-      "Implemented automated testing suites using Cypress, improving code coverage by 40%",
-      "Collaborated with cross-functional teams in agile sprints to deliver features on time",
+      "Yazılım geliştirme, algoritmalar, veri yapıları, yapay zeka, işletim sistemleri alanlarında kapsamlı eğitim",
+      "Çeşitli projeler ve araştırmalar ile sektöre yönelik deneyim kazanımı",
+    ],
+    isEducation: true,
+  },
+  {
+    role: "Proje Çalışanı",
+    company: "Nurol Teknoloji",
+    period: "InnovatioNTogether Platform",
+    points: [
+      "Nurol Holding'in açık inovasyon platformu InnovatioNTogether kapsamında aktif rol aldım",
+      "Yenilikçi proje süreçlerinde Ar-Ge ve teknoloji geliştirme çalışmalarına katkı sağladım",
     ],
   },
   {
-    role: "QA Engineer Intern",
-    company: "Software Solutions Ltd.",
-    period: "Jan 2023 - May 2023",
+    role: "Bilgi İşlem Aday Mühendisi",
+    company: "Intecro Robotics",
+    period: "IT Support & System Administration",
     points: [
-      "Executed comprehensive regression and smoke testing for enterprise applications",
-      "Created detailed test documentation and bug reports using JIRA",
-      "Automated repetitive test cases, reducing manual testing time by 30%",
+      "PC ve çevre birimlerinin kurulumu, donanımsal arızaların tespiti ve giderilmesi",
+      "Windows ve Linux işletim sistemlerinin kurulumu, yapılandırılması ve bakımı",
+      "Ağ topolojisi, IP yapılandırmaları ve temel ağ sorunlarının çözümü",
+      "Active Directory ortamında kullanıcı ve grup yönetimi, yetkilendirme işlemleri",
+      "Uzaktan teknik destek sağlama ve tüm işlemlerin dokümantasyonu",
     ],
   },
   {
-    role: "Community Tech Lead",
-    company: "University Tech Club",
-    period: "Sep 2021 - Dec 2022",
+    role: "Front-end & DevOps Stajyeri",
+    company: "Serebellum Bilişim Danışmanlık",
+    period: "Frontend Development & DevOps",
     points: [
-      "Led workshops on web development, Git, and software best practices",
-      "Mentored junior students in programming and project development",
-      "Organized hackathons and tech events with 100+ participants",
+      "React ile front-end uygulamaları geliştirdim ve kullanıcı odaklı arayüzler tasarladım",
+      "DevOps süreçleri ile Linux sistem yönetimi konusunda pratik deneyim kazandım",
+      "Otomasyon ve süreç iyileştirmeleri gerçekleştirdim",
+    ],
+  },
+  {
+    role: "Başkan Yardımcısı",
+    company: "Ankara Üniversitesi YAZGİT",
+    period: "AI & Image Processing Community",
+    points: [
+      "Sektörel etkinlikler, teknik geziler ve konferanslar organize ettim",
+      "Yazılım geliştirme ve yapay zeka alanlarında eğitim programları hazırladım",
+      "250'den fazla öğrenciye Python programlama eğitimi verdim",
+      "yazgit.com kurarak bilgi paylaşımını artırdım",
+    ],
+  },
+  {
+    role: "Yapay Zeka Eğitmeni",
+    company: "T3 Vakfı Deneyap Teknoloji Atölyeleri",
+    period: "AI Education for Middle School",
+    points: [
+      "Ortaokul öğrencilerine 8 haftalık yapay zeka kursu verdim",
+      "Temel yapay zeka kavramları, algoritmalar ve pratik uygulamalar tanıttım",
+      "Öğrencilerin yapay zeka projeleri üzerinde çalışmalarını teşvik ettim",
     ],
   },
 ];
 
 export const Experience = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/20">
       <div className="container mx-auto">
@@ -47,12 +82,12 @@ export const Experience = () => {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-muted-foreground font-mono text-xl">04.</span> Experience
+            <span className="text-muted-foreground font-mono text-xl">{t("experience.number")}</span> {t("experience.title")}
           </h2>
 
           <div className="space-y-8 relative">
             {/* Timeline line */}
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-accent/30 hidden sm:block" />
+            <div className="absolute left-0 top-0 bottom-0 w-px bg-primary/30 hidden sm:block" />
 
             {experiences.map((exp, index) => (
               <motion.div
@@ -63,16 +98,16 @@ export const Experience = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="absolute left-0 top-6 w-3 h-3 bg-accent rounded-full border-4 border-background hidden sm:block -translate-x-[5px]" />
+                <div className="absolute left-0 top-6 w-3 h-3 bg-primary rounded-full border-4 border-background hidden sm:block -translate-x-[5px]" />
 
-                <Card className="p-6 bg-card/50 backdrop-blur-sm hover:border-accent transition-all duration-300 sm:ml-8">
+                <Card className="p-6 glass border-2 border-primary/10 hover:border-primary transition-all duration-300 sm:ml-8">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-foreground">{exp.role}</h3>
-                      <p className="text-accent-foreground font-semibold">{exp.company}</p>
+                      <p className="text-primary font-semibold">{exp.company}</p>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground text-sm font-mono">
-                      <Briefcase className="h-4 w-4" />
+                      {exp.isEducation ? <GraduationCap className="h-4 w-4" /> : <Briefcase className="h-4 w-4" />}
                       {exp.period}
                     </div>
                   </div>
@@ -80,7 +115,7 @@ export const Experience = () => {
                   <ul className="space-y-2">
                     {exp.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start gap-3 text-muted-foreground">
-                        <span className="text-accent-foreground mt-1.5 font-mono text-xs">▹</span>
+                        <span className="text-primary mt-1.5 font-mono text-xs">▹</span>
                         <span className="leading-relaxed">{point}</span>
                       </li>
                     ))}

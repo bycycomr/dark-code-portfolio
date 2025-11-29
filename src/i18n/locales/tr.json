@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "skills": "Yetenekler",
+    "projects": "Projeler",
+    "experience": "Deneyim",
+    "blog": "Blog",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "greeting": "const developer = {",
+    "name": "Ömer Doğan",
+    "title": "Yazılım Mühendisi & Full-Stack Geliştirici",
+    "description": "Bilgisayar Mühendisliği öğrencisi, yenilikçi çözümler geliştirmeye ve sürekli yeni teknolojiler öğrenmeye tutkulu.",
+    "downloadCV": "CV İndir",
+    "viewProjects": "Projeleri Görüntüle",
+    "location": "Ankara, Türkiye",
+    "mainStack": "Ana Teknolojiler",
+    "experience": "Eğitim",
+    "years": "4. Sınıf",
+    "status": "durum:",
+    "available": "müsait"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "number": "01.",
+    "description": "Bilgisayar Mühendisliği lisans eğitimime devam etmekteyim. Öğrenmeye, yeni teknolojiler geliştirmeye ve farklı alanlarda kendimi geliştirmeye istekli bir mühendis adayıyım. Takım çalışmasına uyumlu, sorumluluk alabilen ve problem çözme odaklı bir yapıya sahibim.",
+    "description2": "Hedefim, edindiğim bilgi ve deneyimlerin üzerine katarak donanımlı bir yazılım geliştirici olmak; ilerleyen aşamalarda ise yapay zeka ve veri bilimi alanlarında uzmanlaşmaktır.",
+    "fact1": "Bilgisayar Mühendisliği 4. Sınıf Öğrencisi",
+    "fact2": "Frontend, DevOps ve IT Destek deneyimi",
+    "fact3": "Yapay Zeka & Makine Öğrenmesi tutkunu"
+  },
+  "skills": {
+    "title": "Yetenekler & Teknolojiler",
+    "number": "02."
+  },
+  "projects": {
+    "title": "Öne Çıkan Projeler",
+    "number": "03.",
+    "viewProject": "Projeyi Görüntüle",
+    "viewCode": "Kodu Görüntüle",
+    "code": "Kod",
+    "demo": "Demo"
+  },
+  "experience": {
+    "title": "Deneyim",
+    "number": "04."
+  },
+  "blog": {
+    "title": "Blog",
+    "number": "05.",
+    "description": "Web geliştirme, yazılım mühendisliği ve teknoloji hakkında düşünceler, öğreticiler ve içgörüler.",
+    "readMore": "Devamını Oku",
+    "backToBlog": "Blog'a Dön",
+    "published": "Yayınlanma",
+    "tags": "Etiketler",
+    "noPosts": "Henüz blog yazısı yok. Yakında tekrar kontrol edin!",
+    "relatedPosts": "İlgili Yazılar"
+  },
+  "contact": {
+    "title": "İletişime Geçin",
+    "number": "06.",
+    "description": "Şu anda staj, tam zamanlı pozisyonlar ve heyecan verici işbirlikleri için açığım. Aklınızda bir proje, iş fırsatı varsa veya sadece bağlantı kurmak istiyorsanız, sizden haber almayı çok isterim!",
+    "sendMessage": "Bana Mesaj Gönder",
+    "name": "İsim",
+    "email": "E-posta",
+    "message": "Mesaj",
+    "sending": "Gönderiliyor...",
+    "success": "Mesaj başarıyla gönderildi!",
+    "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+    "footer": "React + TypeScript + Tailwind CSS ile tasarlandı ve geliştirildi",
+    "copyright": "© 2024 Ömer Doğan. Tüm hakları saklıdır."
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "close": "Kapat"
+  }
+}
+

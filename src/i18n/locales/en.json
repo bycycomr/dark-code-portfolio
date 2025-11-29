@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "const developer = {",
+    "name": "Ömer Doğan",
+    "title": "Software Engineer & Full-Stack Developer",
+    "description": "Computer Engineering student passionate about building innovative solutions and continuously learning new technologies.",
+    "downloadCV": "Download CV",
+    "viewProjects": "View Projects",
+    "location": "Ankara, Turkey",
+    "mainStack": "Main Stack",
+    "experience": "Education",
+    "years": "4th Year",
+    "status": "status:",
+    "available": "available"
+  },
+  "about": {
+    "title": "About Me",
+    "number": "01.",
+    "description": "I'm a Computer Engineering student currently in my 4th year. I'm eager to learn, develop new technologies, and improve myself in different areas. I'm adaptable to teamwork, can take responsibility, and have a problem-solving focused mindset.",
+    "description2": "My goal is to become a well-equipped software developer by building upon the knowledge and experience I've gained. In the future, I aim to specialize in artificial intelligence and data science fields.",
+    "fact1": "Computer Engineering 4th Year Student",
+    "fact2": "Experience in Frontend, DevOps, and IT Support",
+    "fact3": "AI & Machine Learning enthusiast"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "number": "02."
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "number": "03.",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "code": "Code",
+    "demo": "Demo"
+  },
+  "experience": {
+    "title": "Experience",
+    "number": "04."
+  },
+  "blog": {
+    "title": "Blog",
+    "number": "05.",
+    "description": "Thoughts, tutorials, and insights about web development, software engineering, and technology.",
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog",
+    "published": "Published",
+    "tags": "Tags",
+    "noPosts": "No blog posts yet. Check back soon!",
+    "relatedPosts": "Related Posts"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "number": "06.",
+    "description": "I'm currently open to internships, full-time roles, and exciting collaborations. Whether you have a project in mind, a job opportunity, or just want to connect, I'd love to hear from you!",
+    "sendMessage": "Send Me a Message",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again.",
+    "footer": "Designed & Built with React + TypeScript + Tailwind CSS",
+    "copyright": "© 2024 Ömer Doğan. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "close": "Close"
+  }
+}
+

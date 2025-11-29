@@ -1,27 +1,30 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 const skillCategories = [
   {
-    category: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML", "CSS"],
+    category: "Programming Languages",
+    skills: ["Python", "C", "JavaScript", "Java"],
   },
   {
-    category: "Backend",
-    skills: ["Node.js", ".NET", "PHP", "REST APIs"],
+    category: "Frontend & Backend",
+    skills: ["React", "Spring Boot", "MySQL", "REST APIs"],
   },
   {
-    category: "DevOps / Tools",
-    skills: ["Docker", "Git", "GitHub", "CI/CD"],
+    category: "DevOps & Tools",
+    skills: ["AWS", "Git", "Linux", "Active Directory", "Backup/Recovery"],
   },
   {
-    category: "Testing / QA",
-    skills: ["Cypress", "Postman", "Regression Testing", "Smoke Testing"],
+    category: "Soft Skills",
+    skills: ["Teamwork", "Leadership", "Problem Solving", "Time Management", "Communication"],
   },
 ];
 
 export const Skills = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/20">
       <div className="container mx-auto">
@@ -33,7 +36,7 @@ export const Skills = () => {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-muted-foreground font-mono text-xl">02.</span> Skills & Technologies
+            <span className="text-muted-foreground font-mono text-xl">{t("skills.number")}</span> {t("skills.title")}
           </h2>
 
           <div className="grid sm:grid-cols-2 gap-6">
@@ -45,8 +48,8 @@ export const Skills = () => {
                 transition={{ delay: categoryIndex * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <Card className="p-6 h-full bg-card/50 backdrop-blur-sm hover:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
-                  <h3 className="text-lg font-semibold mb-4 text-accent-foreground font-mono">
+                <Card className="p-6 h-full glass border-2 border-primary/10 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                  <h3 className="text-lg font-semibold mb-4 text-primary font-mono">
                     {category.category}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -61,7 +64,7 @@ export const Skills = () => {
                       >
                         <Badge
                           variant="secondary"
-                          className="text-sm py-1.5 px-3 bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors cursor-default"
+                          className="text-sm py-1.5 px-3 bg-secondary hover:bg-primary hover:text-white transition-colors cursor-default"
                         >
                           {skill}
                         </Badge>

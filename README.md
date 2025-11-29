@@ -1,73 +1,77 @@
-# Welcome to your Lovable project
+# Ömer Doğan - Portfolio Website
 
-## Project info
+Modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/94cd6540-b78a-4d10-854e-ccb2a86bb936
+## Features
 
-## How can I edit this code?
+- 🌐 **Multi-language Support** - Turkish and English
+- 🎨 **Modern Dark Theme** - Beautiful dark UI with glassmorphism effects
+- 📱 **Fully Responsive** - Works perfectly on all devices
+- ⚡ **Fast & Optimized** - Built with Vite for lightning-fast performance
+- 🎯 **SEO Friendly** - Optimized meta tags and structure
+- 📝 **Blog Section** - Share your thoughts and tutorials
+- 💼 **CV Download** - Download CV in your preferred language
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Animations**: Framer Motion
+- **Routing**: React Router
+- **i18n**: React i18next
+- **Icons**: Lucide React
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/94cd6540-b78a-4d10-854e-ccb2a86bb936) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+ and npm
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/        # React components
+│   ├── portfolio/    # Portfolio-specific components
+│   └── ui/           # shadcn/ui components
+├── pages/            # Page components
+├── i18n/             # Internationalization
+│   └── locales/      # Translation files
+├── assets/           # Images and static assets
+├── CV/               # CV PDF files
+└── lib/              # Utility functions
+```
 
-**Use GitHub Codespaces**
+## Customization
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Update Personal Information
 
-## What technologies are used for this project?
+1. Edit translation files in `src/i18n/locales/`
+2. Update CV files in `src/CV/`
+3. Modify components in `src/components/portfolio/`
 
-This project is built with:
+### Change Theme Colors
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Edit color variables in `src/index.css`
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/94cd6540-b78a-4d10-854e-ccb2a86bb936) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+MIT

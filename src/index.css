@@ -8,43 +8,47 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark developer portfolio theme */
-    --background: 240 8% 3%;
-    --foreground: 0 0% 96%;
+    /* Dark modern portfolio theme - refined blue/cyan */
+    --background: 240 10% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 240 5% 10%;
-    --card-foreground: 0 0% 96%;
+    --card: 240 8% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 240 5% 10%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 240 8% 10%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 96%;
-    --primary-foreground: 240 8% 3%;
+    --primary: 200 100% 55%;
+    --primary-foreground: 240 10% 6%;
 
-    --secondary: 240 4% 12%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 240 6% 12%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 4% 12%;
-    --muted-foreground: 0 0% 63%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 100% 85%;
+    --accent: 180 75% 50%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 96%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 240 4% 15%;
-    --input: 240 4% 15%;
-    --ring: 217 33% 40%;
+    --border: 240 6% 18%;
+    --input: 240 6% 18%;
+    --ring: 200 100% 55%;
 
     --radius: 0.75rem;
 
     /* Code elements */
-    --code-bg: 240 6% 7%;
-    --code-text: 210 100% 75%;
+    --code-bg: 240 8% 8%;
+    --code-text: 180 75% 60%;
 
     /* Subtle accent */
-    --subtle-accent: 217 33% 25%;
+    --subtle-accent: 200 50% 20%;
+
+    /* Gradient colors - blue to cyan */
+    --gradient-from: 200 100% 55%;
+    --gradient-to: 180 75% 55%;
   }
 }
 
@@ -56,6 +60,8 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(to bottom, hsl(var(--background)), hsl(240 10% 6%));
+    min-height: 100vh;
   }
 
   .font-mono {
@@ -67,12 +73,22 @@ All colors MUST be HSL.
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@layer utilities {
+  .glass {
+    background: rgba(15, 20, 30, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  body {
-    @apply bg-background text-foreground;
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
   }
 }

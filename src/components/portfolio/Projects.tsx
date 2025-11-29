@@ -3,39 +3,30 @@ import { ExternalLink, Github } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
-    name: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with real-time inventory management, payment integration, and admin dashboard.",
-    tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
+    name: "DigiCampus - DigiEduHack 2024",
+    description: "Local Winner project in the international DigiEduHack 2024 hackathon organized by the European Union. Led the project management for DigiCampus, managing all stages from idea development to web development, content creation, and team coordination.",
+    tech: ["Web Development", "Project Management", "Team Leadership"],
     github: "#",
     demo: "#",
+    achievement: "🏆 Local Winner",
   },
   {
-    name: "Task Management App",
-    description: "Collaborative task management tool with real-time updates, team workspaces, and deadline tracking.",
-    tech: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+    name: "Pink - Ankü Game Jam",
+    description: "2nd place winner out of 20 teams. Led the team and managed the project. Developed 'Pink' game in 48 hours, successfully completing game design, software development, level design, and project management processes.",
+    tech: ["Game Development", "Game Design", "Project Management"],
     github: "#",
-    demo: "#",
-  },
-  {
-    name: "DevOps Dashboard",
-    description: "Monitoring and deployment dashboard for tracking CI/CD pipelines, server metrics, and automated testing results.",
-    tech: ["React", "Docker", "GitHub Actions", "Chart.js"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    name: "Testing Framework",
-    description: "Custom automation testing framework with parallel execution, detailed reporting, and integration with major CI tools.",
-    tech: ["Cypress", "Node.js", "TypeScript", "Jest"],
-    github: "#",
-    demo: "#",
+    demo: "https://example.com/pink-game",
+    achievement: "🥈 2nd Place",
   },
 ];
 
 export const Projects = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
@@ -46,7 +37,7 @@ export const Projects = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-muted-foreground font-mono text-xl">03.</span> Featured Projects
+            <span className="text-muted-foreground font-mono text-xl">{t("projects.number")}</span> {t("projects.title")}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -59,8 +50,13 @@ export const Projects = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <Card className="p-6 h-full bg-card/50 backdrop-blur-sm hover:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 flex flex-col">
-                  <h3 className="text-xl font-bold mb-3 text-foreground">{project.name}</h3>
+                <Card className="p-6 h-full glass border-2 border-primary/10 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 flex flex-col">
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    <h3 className="text-xl font-bold text-foreground">{project.name}</h3>
+                    {project.achievement && (
+                      <span className="text-xs font-bold text-primary whitespace-nowrap">{project.achievement}</span>
+                    )}
+                  </div>
                   <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">
                     {project.description}
                   </p>
@@ -70,7 +66,7 @@ export const Projects = () => {
                       <Badge
                         key={tech}
                         variant="outline"
-                        className="text-xs border-accent/30 text-accent-foreground"
+                        className="text-xs border-primary/30 text-primary"
                       >
                         {tech}
                       </Badge>
@@ -81,13 +77,13 @@ export const Projects = () => {
                     <Button variant="secondary" size="sm" className="flex-1" asChild>
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4" />
-                        Code
+                        {t("projects.code")}
                       </a>
                     </Button>
-                    <Button size="sm" className="flex-1" asChild>
+                    <Button size="sm" className="flex-1 gradient-bg text-white hover:opacity-90" asChild>
                       <a href={project.demo} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2 h-4 w-4" />
-                        Demo
+                        {t("projects.demo")}
                       </a>
                     </Button>
                   </div>
