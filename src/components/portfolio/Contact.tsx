@@ -93,7 +93,7 @@ export const Contact = () => {
             <span className="text-muted-foreground font-mono text-xl">{t("contact.number")}</span> {t("contact.title")}
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-8 mt-12">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-12">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -173,7 +173,7 @@ export const Contact = () => {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {t("contact.description")}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-3 sm:gap-4">
                   {contactLinks.map((link, index) => (
                     <motion.div
                       key={link.name}

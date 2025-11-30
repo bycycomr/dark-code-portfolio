@@ -63,37 +63,37 @@ export const Education = () => {
               >
                 <div className="absolute left-0 top-6 w-3 h-3 bg-accent rounded-full border-4 border-background hidden sm:block -translate-x-[5px]" />
 
-                <Card className="p-6 glass border-2 border-accent/10 hover:border-accent transition-all duration-300 sm:ml-8">
-                  <div className="flex gap-4 mb-4">
+                <Card className="p-4 sm:p-6 glass border-2 border-accent/10 hover:border-accent transition-all duration-300 sm:ml-8">
+                  <div className="flex gap-3 sm:gap-4 mb-4">
                     {/* School Logo */}
-                    <div className="w-14 h-14 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
                       {edu.logo ? (
                         <img 
                           src={edu.logo} 
                           alt={edu.school}
-                          className="w-10 h-10 object-contain"
+                          className="w-7 h-7 sm:w-10 sm:h-10 object-contain"
                         />
                       ) : (
-                        <GraduationCap className="w-8 h-8 text-accent" />
+                        <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />
                       )}
                     </div>
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-col gap-1 sm:gap-2">
                         <div>
-                          <h3 className="text-xl font-bold text-foreground">{edu.degree}</h3>
+                          <h3 className="text-base sm:text-xl font-bold text-foreground">{edu.degree}</h3>
                           <a 
                             href={edu.link} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="text-accent font-semibold hover:underline inline-flex items-center gap-1"
+                            className="text-accent text-sm sm:text-base font-semibold hover:underline inline-flex items-center gap-1"
                           >
-                            {edu.school}
-                            <ExternalLink className="h-3 w-3" />
+                            <span className="truncate">{edu.school}</span>
+                            <ExternalLink className="h-3 w-3 flex-shrink-0" />
                           </a>
                         </div>
-                        <div className="flex items-center gap-2 text-muted-foreground text-sm font-mono">
-                          <GraduationCap className="h-4 w-4" />
-                          {edu.period}
+                        <div className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm font-mono">
+                          <GraduationCap className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                          <span className="truncate">{edu.period}</span>
                         </div>
                       </div>
                     </div>
@@ -101,8 +101,8 @@ export const Education = () => {
 
                   <ul className="space-y-2">
                     {edu.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start gap-3 text-muted-foreground">
-                        <span className="text-accent mt-1.5 font-mono text-xs">▹</span>
+                      <li key={pointIndex} className="flex items-start gap-2 sm:gap-3 text-muted-foreground text-sm sm:text-base">
+                        <span className="text-accent mt-1 sm:mt-1.5 font-mono text-xs">▹</span>
                         <span className="leading-relaxed">{point}</span>
                       </li>
                     ))}

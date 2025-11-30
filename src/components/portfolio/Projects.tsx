@@ -50,18 +50,18 @@ export const Projects = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <Card className="p-6 h-full glass border-2 border-primary/10 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 flex flex-col">
-                  <div className="flex items-start justify-between gap-2 mb-3">
-                    <h3 className="text-xl font-bold text-foreground">{project.name}</h3>
+                <Card className="p-4 sm:p-6 h-full glass border-2 border-primary/10 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 flex flex-col">
+                  <div className="flex items-start justify-between gap-2 mb-2 sm:mb-3">
+                    <h3 className="text-base sm:text-xl font-bold text-foreground">{project.name}</h3>
                     {project.achievement && (
                       <span className="text-xs font-bold text-primary whitespace-nowrap">{project.achievement}</span>
                     )}
                   </div>
-                  <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">
+                  <p className="text-muted-foreground text-sm sm:text-base mb-3 sm:mb-4 flex-grow leading-relaxed">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {project.tech.map((tech) => (
                       <Badge
                         key={tech}
@@ -73,16 +73,16 @@ export const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-3">
-                    <Button variant="secondary" size="sm" className="flex-1" asChild>
+                  <div className="flex gap-2 sm:gap-3">
+                    <Button variant="secondary" size="sm" className="flex-1 text-xs sm:text-sm" asChild>
                       <a href={project.info} target="_blank" rel="noopener noreferrer">
-                        <Info className="mr-2 h-4 w-4" />
+                        <Info className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                         {t("projects.info")}
                       </a>
                     </Button>
-                    <Button size="sm" className="flex-1 gradient-bg text-white hover:opacity-90" asChild>
+                    <Button size="sm" className="flex-1 text-xs sm:text-sm gradient-bg text-white hover:opacity-90" asChild>
                       <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
+                        <ExternalLink className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                         {t("projects.demo")}
                       </a>
                     </Button>

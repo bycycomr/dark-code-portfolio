@@ -49,8 +49,8 @@ export const About = () => {
                     {t("about.description2") || "I'm constantly learning new technologies and best practices to stay at the forefront of software development. When I'm not coding, I enjoy contributing to open-source projects and sharing knowledge with the developer community."}
                   </p>
                 </div>
-                <div className="flex justify-center items-center">
-                  <div className="relative w-72 h-72 rounded-xl overflow-hidden border-4 border-primary/30 shadow-2xl hover:border-primary/50 transition-all duration-300">
+                <div className="flex justify-center items-center order-first md:order-last">
+                  <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-xl overflow-hidden border-4 border-primary/30 shadow-2xl hover:border-primary/50 transition-all duration-300">
                     <img 
                       src={kolnImage} 
                       alt="Ömer Doğan" 

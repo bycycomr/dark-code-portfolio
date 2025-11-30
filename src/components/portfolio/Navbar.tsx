@@ -93,14 +93,14 @@ export const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             {navItems.map((item) => {
               if (item.href.startsWith("/")) {
                 return (
                   <Link
                     key={item.key}
                     to={item.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                    className="text-xs xl:text-sm font-medium text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                   >
                     {t(`nav.${item.key}`)}
                   </Link>
@@ -111,7 +111,7 @@ export const Navbar = () => {
                   key={item.key}
                   href={item.href}
                   onClick={(e) => handleHashClick(e, item.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                  className="text-xs xl:text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
                 >
                   {t(`nav.${item.key}`)}
                 </a>
@@ -138,7 +138,7 @@ export const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="gap-2">
@@ -167,7 +167,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass border-t border-border">
+        <div className="lg:hidden glass border-t border-border">
           <div className="container mx-auto px-4 py-4 space-y-3">
             {navItems.map((item) => {
               if (item.href.startsWith("/")) {

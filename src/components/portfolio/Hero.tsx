@@ -39,7 +39,7 @@ export const Hero = () => {
       </div>
 
       <div className="container mx-auto relative z-10">
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 items-center">
           <motion.div
             className="lg:col-span-2"
             initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
               >
                 <span className="gradient-text">{t("hero.name")}</span>
               </motion.h1>
@@ -69,7 +69,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-primary"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-primary"
               >
                 {t("hero.title")}
               </motion.h2>
@@ -116,11 +116,11 @@ export const Hero = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="lg:col-span-1"
           >
-            <Card className="p-6 glass border-2 border-primary/20 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="space-y-4">
+            <Card className="p-4 sm:p-6 glass border-2 border-primary/20 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="space-y-3 sm:space-y-4">
                 {/* Profile Image */}
-                <div className="flex justify-center mb-4">
-                  <Avatar className="w-32 h-32 border-4 border-primary/30">
+                <div className="flex justify-center mb-2 sm:mb-4">
+                  <Avatar className="w-24 h-24 sm:w-32 sm:h-32 border-4 border-primary/30">
                     <AvatarImage src={profileImage} alt="Ömer Doğan" className="object-cover" />
                   </Avatar>
                 </div>
