@@ -1,79 +1,9 @@
 import { motion } from "framer-motion";
-import { Briefcase, ExternalLink } from "lucide-react";
+import { Briefcase, Calendar, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "react-i18next";
-
-// Import logos
-import nurolLogo from "@/logos/nurol-teknoloji.svg";
-import intecroLogo from "@/logos/7-Intecro_dikey_beyaz_turuncu.jpg";
-import serebellumLogo from "@/logos/serebellum-logo-beyaz.png";
-import yazgitLogo from "@/logos/YAZGIT-Logo.png";
-import t3Logo from "@/logos/T3.png";
-
-const experiences = [
-  {
-    role: "Proje Çalışanı",
-    company: "Nurol Teknoloji",
-    companyLink: "https://www.nurolteknoloji.com/tr",
-    logo: nurolLogo,
-    period: "InnovatioNTogether Platform",
-    points: [
-      "Nurol Holding'in açık inovasyon platformu InnovatioNTogether kapsamında aktif rol aldım",
-      "Yenilikçi proje süreçlerinde Ar-Ge ve teknoloji geliştirme çalışmalarına katkı sağladım",
-    ],
-  },
-  {
-    role: "Bilgi İşlem Aday Mühendisi",
-    company: "Intecro Robotics",
-    companyLink: "https://intecro.com.tr/tr/",
-    logo: intecroLogo,
-    period: "IT Support & System Administration",
-    points: [
-      "PC ve çevre birimlerinin kurulumu, donanımsal arızaların tespiti ve giderilmesi",
-      "Windows ve Linux işletim sistemlerinin kurulumu, yapılandırılması ve bakımı",
-      "Ağ topolojisi, IP yapılandırmaları ve temel ağ sorunlarının çözümü",
-      "Active Directory ortamında kullanıcı ve grup yönetimi, yetkilendirme işlemleri",
-      "Uzaktan teknik destek sağlama ve tüm işlemlerin dokümantasyonu",
-    ],
-  },
-  {
-    role: "Front-end & DevOps Stajyeri",
-    company: "Serebellum Bilişim Danışmanlık",
-    companyLink: "https://serebellum.com/",
-    logo: serebellumLogo,
-    period: "Frontend Development & DevOps",
-    points: [
-      "React ile front-end uygulamaları geliştirdim ve kullanıcı odaklı arayüzler tasarladım",
-      "DevOps süreçleri ile Linux sistem yönetimi konusunda pratik deneyim kazandım",
-      "Otomasyon ve süreç iyileştirmeleri gerçekleştirdim",
-    ],
-  },
-  {
-    role: "Başkan Yardımcısı",
-    company: "Ankara Üniversitesi YAZGİT",
-    companyLink: "https://www.yazgit.com.tr/",
-    logo: yazgitLogo,
-    period: "AI & Image Processing Community",
-    points: [
-      "Sektörel etkinlikler, teknik geziler ve konferanslar organize ettim",
-      "Yazılım geliştirme ve yapay zeka alanlarında eğitim programları hazırladım",
-      "250'den fazla öğrenciye Python programlama eğitimi verdim",
-      "yazgit.com kurarak bilgi paylaşımını artırdım",
-    ],
-  },
-  {
-    role: "Yapay Zeka Eğitmeni",
-    company: "T3 Vakfı Deneyap Teknoloji Atölyeleri",
-    companyLink: "https://www.deneyap.org/tr/",
-    logo: t3Logo,
-    period: "AI Education for Middle School",
-    points: [
-      "Ortaokul öğrencilerine 8 haftalık yapay zeka kursu verdim",
-      "Temel yapay zeka kavramları, algoritmalar ve pratik uygulamalar tanıttım",
-      "Öğrencilerin yapay zeka projeleri üzerinde çalışmalarını teşvik ettim",
-    ],
-  },
-];
+import { experiences } from "@/data/experiences";
 
 export const Experience = () => {
   const { t } = useTranslation();
@@ -89,12 +19,12 @@ export const Experience = () => {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-muted-foreground font-mono text-xl">{t("experience.number")}</span> {t("experience.title")}
+            <span className="text-muted-foreground font-mono text-xl">{t("experience.number")}</span>{" "}
+            {t("experience.title")}
           </h2>
 
-          <div className="space-y-8 relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-primary/30 hidden sm:block" />
+          <div className="space-y-6 relative">
+            <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent hidden sm:block" />
 
             {experiences.map((exp, index) => (
               <motion.div
@@ -103,50 +33,55 @@ export const Experience = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="relative"
+                className="relative sm:pl-14"
               >
-                <div className="absolute left-0 top-6 w-3 h-3 bg-primary rounded-full border-4 border-background hidden sm:block -translate-x-[5px]" />
+                <div className="absolute left-3 top-5 w-5 h-5 bg-background border-2 border-primary rounded-full hidden sm:flex items-center justify-center">
+                  <div className="w-2 h-2 bg-primary rounded-full" />
+                </div>
 
-                <Card className="p-4 sm:p-6 glass border-2 border-primary/10 hover:border-primary transition-all duration-300 sm:ml-8">
-                  <div className="flex gap-3 sm:gap-4 mb-4">
-                    {/* Company Logo */}
-                    <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
-                      <img 
-                        src={exp.logo} 
+                <Card className="p-5 sm:p-6 glass border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                  <div className="flex gap-4 mb-4">
+                    <div className="w-11 h-11 rounded-lg bg-white/5 border border-border flex items-center justify-center overflow-hidden flex-shrink-0">
+                      <img
+                        src={exp.logo}
                         alt={exp.company}
-                        className="w-7 h-7 sm:w-10 sm:h-10 object-contain"
+                        className="w-8 h-8 object-contain"
                         onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                          e.currentTarget.parentElement!.innerHTML = `<span class="text-xl sm:text-2xl font-bold text-primary">${exp.company.charAt(0)}</span>`;
+                          e.currentTarget.style.display = "none";
+                          e.currentTarget.parentElement!.innerHTML = `<span class="text-lg font-bold text-primary">${exp.company.charAt(0)}</span>`;
                         }}
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex flex-col gap-1 sm:gap-2">
-                        <div>
-                          <h3 className="text-base sm:text-xl font-bold text-foreground">{exp.role}</h3>
-                          <a 
-                            href={exp.companyLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-primary text-sm sm:text-base font-semibold hover:underline inline-flex items-center gap-1"
-                          >
-                            <span className="truncate">{exp.company}</span>
-                            <ExternalLink className="h-3 w-3 flex-shrink-0" />
-                          </a>
-                        </div>
-                        <div className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm font-mono">
-                          <Briefcase className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                          <span className="truncate">{exp.period}</span>
-                        </div>
+                      <h3 className="text-base sm:text-lg font-bold text-foreground leading-tight">
+                        {exp.role}
+                      </h3>
+                      <a
+                        href={exp.companyLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary text-sm font-semibold hover:underline inline-flex items-center gap-1 mt-0.5"
+                      >
+                        {exp.company}
+                        <ExternalLink className="h-3 w-3 flex-shrink-0" />
+                      </a>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1.5">
+                        <span className="text-xs text-muted-foreground font-mono flex items-center gap-1">
+                          <Briefcase className="h-3 w-3" />
+                          {exp.subtitle}
+                        </span>
+                        <Badge variant="outline" className="text-xs border-primary/20 text-muted-foreground font-mono h-5 px-2">
+                          <Calendar className="h-2.5 w-2.5 mr-1" />
+                          {exp.dateRange}
+                        </Badge>
                       </div>
                     </div>
                   </div>
 
-                  <ul className="space-y-2">
-                    {exp.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start gap-2 sm:gap-3 text-muted-foreground text-sm sm:text-base">
-                        <span className="text-primary mt-1 sm:mt-1.5 font-mono text-xs">▹</span>
+                  <ul className="space-y-1.5 mt-3 border-t border-border pt-3">
+                    {exp.points.map((point, i) => (
+                      <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary mt-1 font-mono text-xs flex-shrink-0">▹</span>
                         <span className="leading-relaxed">{point}</span>
                       </li>
                     ))}

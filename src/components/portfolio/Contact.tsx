@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Send, Globe, BookOpen } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Globe, BookOpen, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -13,8 +13,14 @@ const contactLinks = [
   {
     name: "Email",
     icon: Mail,
-    href: "mailto:mail@omerdogan.dev",
-    label: "mail@omerdogan.dev",
+    href: "mailto:omerr.dogan11@gmail.com",
+    label: "omerr.dogan11@gmail.com",
+  },
+  {
+    name: "Telefon",
+    icon: Phone,
+    href: "tel:+905056778544",
+    label: "+90 505 677 85 44",
   },
   {
     name: "LinkedIn",
@@ -29,16 +35,16 @@ const contactLinks = [
     label: "github.com/bycycomr",
   },
   {
-    name: "Website",
-    icon: Globe,
-    href: "https://omerdogan.dev",
-    label: "omerdogan.dev",
-  },
-  {
     name: "Medium",
     icon: BookOpen,
     href: "https://medium.com/@bycycomr",
     label: "medium.com/@bycycomr",
+  },
+  {
+    name: "Website",
+    icon: Globe,
+    href: "https://omerdogan.dev",
+    label: "omerdogan.dev",
   },
 ];
 
@@ -46,30 +52,24 @@ export const Contact = () => {
   const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Mailto link ile email gönder
-    const mailtoLink = `mailto:mail@omerdogan.dev?subject=Portfolio Contact: ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    const mailtoLink = `mailto:omerr.dogan11@gmail.com?subject=Portfolio Contact: ${encodeURIComponent(
+      formData.name
+    )}&body=${encodeURIComponent(
+      `İsim: ${formData.name}\nE-posta: ${formData.email}\n\nMesaj:\n${formData.message}`
     )}`;
-    
+
     window.location.href = mailtoLink;
-    
+
     toast({
       title: t("contact.success"),
       description: t("contact.successDesc"),
@@ -89,23 +89,27 @@ export const Contact = () => {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">
-            <span className="text-muted-foreground font-mono text-xl">{t("contact.number")}</span> {t("contact.title")}
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-center">
+            <span className="text-muted-foreground font-mono text-xl">{t("contact.number")}</span>{" "}
+            {t("contact.title")}
           </h2>
+          <p className="text-center text-muted-foreground text-sm mb-10 max-w-lg mx-auto">
+            {t("contact.description")}
+          </p>
 
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-12">
-            {/* Contact Form */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Card className="p-6 sm:p-8 glass border-2 border-primary/10 shadow-lg h-full">
-                <h3 className="text-xl font-bold mb-6">{t("contact.formTitle")}</h3>
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">{t("contact.name")}</Label>
+              <Card className="p-6 sm:p-8 glass border border-border h-full">
+                <h3 className="text-lg font-bold mb-5">{t("contact.formTitle")}</h3>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="name" className="text-sm">{t("contact.name")}</Label>
                     <Input
                       id="name"
                       name="name"
@@ -113,11 +117,11 @@ export const Contact = () => {
                       onChange={handleChange}
                       placeholder={t("contact.namePlaceholder")}
                       required
-                      className="bg-secondary/50 border-primary/20 focus:border-primary"
+                      className="bg-secondary/40 border-border focus:border-primary h-10"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">{t("contact.email")}</Label>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="email" className="text-sm">{t("contact.email")}</Label>
                     <Input
                       id="email"
                       name="email"
@@ -126,11 +130,11 @@ export const Contact = () => {
                       onChange={handleChange}
                       placeholder={t("contact.emailPlaceholder")}
                       required
-                      className="bg-secondary/50 border-primary/20 focus:border-primary"
+                      className="bg-secondary/40 border-border focus:border-primary h-10"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">{t("contact.message")}</Label>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="message" className="text-sm">{t("contact.message")}</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -139,20 +143,20 @@ export const Contact = () => {
                       placeholder={t("contact.messagePlaceholder")}
                       required
                       rows={5}
-                      className="bg-secondary/50 border-primary/20 focus:border-primary resize-none"
+                      className="bg-secondary/40 border-border focus:border-primary resize-none"
                     />
                   </div>
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full group gradient-bg text-white hover:opacity-90"
+                    className="w-full group gradient-bg text-white hover:opacity-90 shadow-lg shadow-primary/20"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       t("contact.sending")
                     ) : (
                       <>
-                        <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                        <Send className="mr-2 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                         {t("contact.sendMessage")}
                       </>
                     )}
@@ -161,37 +165,34 @@ export const Contact = () => {
               </Card>
             </motion.div>
 
-            {/* Contact Links */}
+            {/* Links */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Card className="p-6 sm:p-8 glass border-2 border-primary/10 shadow-lg h-full">
-                <h3 className="text-xl font-bold mb-6">{t("contact.connectTitle")}</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {t("contact.description")}
-                </p>
-                <div className="grid grid-cols-1 gap-3 sm:gap-4">
+              <Card className="p-6 sm:p-8 glass border border-border h-full">
+                <h3 className="text-lg font-bold mb-5">{t("contact.connectTitle")}</h3>
+                <div className="grid grid-cols-1 gap-2.5">
                   {contactLinks.map((link, index) => (
                     <motion.div
                       key={link.name}
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 8 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 + index * 0.1, duration: 0.3 }}
+                      transition={{ delay: 0.35 + index * 0.07, duration: 0.3 }}
                       viewport={{ once: true }}
                     >
                       <a
                         href={link.href}
-                        target="_blank"
+                        target={link.href.startsWith("mailto") || link.href.startsWith("tel") ? "_self" : "_blank"}
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-3 rounded-lg bg-secondary/30 hover:bg-primary/10 hover:border-primary border border-transparent transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded-lg bg-secondary/30 hover:bg-primary/10 border border-transparent hover:border-primary/30 transition-all duration-200 group"
                       >
-                        <link.icon className="h-5 w-5 text-primary flex-shrink-0" />
+                        <link.icon className="h-4 w-4 text-primary flex-shrink-0" />
                         <div className="min-w-0">
-                          <p className="font-medium text-foreground text-sm">{link.name}</p>
-                          <p className="text-xs text-muted-foreground font-mono truncate">
+                          <p className="text-xs font-semibold text-foreground">{link.name}</p>
+                          <p className="text-xs text-muted-foreground font-mono truncate group-hover:text-primary/70 transition-colors">
                             {link.label}
                           </p>
                         </div>
@@ -203,15 +204,15 @@ export const Contact = () => {
             </motion.div>
           </div>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
             viewport={{ once: true }}
-            className="mt-12 text-center text-sm text-muted-foreground font-mono"
+            className="mt-12 text-center text-xs text-muted-foreground font-mono"
           >
-            <p>{t("contact.copyright")}</p>
-          </motion.div>
+            {t("contact.copyright")}
+          </motion.p>
         </motion.div>
       </div>
     </section>

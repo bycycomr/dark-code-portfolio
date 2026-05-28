@@ -2,53 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Dark modern portfolio theme - refined blue/cyan */
-    --background: 240 10% 6%;
-    --foreground: 0 0% 98%;
+    --background: 222 20% 5%;
+    --foreground: 210 20% 96%;
 
-    --card: 240 8% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 222 16% 9%;
+    --card-foreground: 210 20% 96%;
 
-    --popover: 240 8% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 16% 9%;
+    --popover-foreground: 210 20% 96%;
 
-    --primary: 200 100% 55%;
-    --primary-foreground: 240 10% 6%;
+    --primary: 199 98% 52%;
+    --primary-foreground: 222 20% 5%;
 
-    --secondary: 240 6% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 222 14% 12%;
+    --secondary-foreground: 210 20% 96%;
 
-    --muted: 240 6% 12%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 222 14% 12%;
+    --muted-foreground: 215 14% 58%;
 
-    --accent: 180 75% 50%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 174 72% 48%;
+    --accent-foreground: 210 20% 96%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 20% 96%;
 
-    --border: 240 6% 18%;
-    --input: 240 6% 18%;
-    --ring: 200 100% 55%;
+    --border: 222 12% 16%;
+    --input: 222 12% 16%;
+    --ring: 199 98% 52%;
 
     --radius: 0.75rem;
 
-    /* Code elements */
-    --code-bg: 240 8% 8%;
-    --code-text: 180 75% 60%;
-
-    /* Subtle accent */
-    --subtle-accent: 200 50% 20%;
-
-    /* Gradient colors - blue to cyan */
-    --gradient-from: 200 100% 55%;
-    --gradient-to: 180 75% 55%;
+    --gradient-from: 199 98% 52%;
+    --gradient-to: 174 72% 48%;
   }
 }
 
@@ -60,25 +47,44 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(to bottom, hsl(var(--background)), hsl(240 10% 6%));
     min-height: 100vh;
   }
 
   .font-mono {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+
+  /* Selection */
+  ::selection {
+    background: hsl(var(--primary) / 0.25);
+    color: hsl(var(--foreground));
+  }
 }
 
 @layer utilities {
   .glass {
-    background: rgba(15, 20, 30, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(12, 16, 26, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
 
   .gradient-text {
@@ -90,5 +96,9 @@ All colors MUST be HSL.
 
   .gradient-bg {
     background: linear-gradient(135deg, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
+  }
+
+  .section-fade {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
   }
 }

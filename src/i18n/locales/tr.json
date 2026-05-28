@@ -14,23 +14,23 @@
     "greeting": "const developer = {",
     "name": "Ömer Doğan",
     "title": "Yazılım Mühendisi & Full-Stack Geliştirici",
-    "description": "Bilgisayar Mühendisliği öğrencisi, yenilikçi çözümler geliştirmeye ve sürekli yeni teknolojiler öğrenmeye tutkulu.",
+    "description": "Bilgisayar Mühendisliği mezunu. React, Python ve AWS ile uygulamalar geliştiriyor; DevOps süreçleri, yapay zeka ve açık kaynak teknolojilerine tutkuyla ilgi duyuyorum.",
     "downloadCV": "CV İndir",
-    "viewProjects": "Projeleri Görüntüle",
+    "viewProjects": "Projeleri Gör",
     "location": "Ankara, Türkiye",
-    "mainStack": "Ana Teknolojiler",
+    "mainStack": "Teknoloji Yığını",
     "experience": "Eğitim",
-    "years": "4. Sınıf",
+    "years": "Mezun",
     "status": "durum:",
     "available": "müsait"
   },
   "about": {
     "title": "Hakkımda",
     "number": "01.",
-    "description": "Bilgisayar Mühendisliği lisans eğitimime devam etmekteyim. Öğrenmeye, yeni teknolojiler geliştirmeye ve farklı alanlarda kendimi geliştirmeye istekli bir mühendis adayıyım. Takım çalışmasına uyumlu, sorumluluk alabilen ve problem çözme odaklı bir yapıya sahibim.",
-    "description2": "Hedefim, edindiğim bilgi ve deneyimlerin üzerine katarak donanımlı bir yazılım geliştirici olmak; ilerleyen aşamalarda ise yapay zeka ve veri bilimi alanlarında uzmanlaşmaktır.",
-    "fact1": "Bilgisayar Mühendisliği 4. Sınıf Öğrencisi",
-    "fact2": "Frontend, DevOps ve IT Destek deneyimi",
+    "description": "Bilgisayar Mühendisliği lisans eğitimimi tamamladım. Frontend geliştirme, DevOps ve IT alanlarında pratik iş deneyimi edindim. Takım çalışmasına uyumlu, sorumluluk alabilen ve problem çözme odaklı bir yapıya sahibim.",
+    "description2": "Hedefim, edindiğim bilgi ve deneyimlerin üzerine katarak donanımlı bir yazılım geliştirici olmak; ilerleyen süreçlerde yapay zeka ve veri bilimi alanlarında uzmanlaşmaktır.",
+    "fact1": "Bilgisayar Mühendisliği Mezunu — Ankara Üniversitesi",
+    "fact2": "Frontend, DevOps ve IT Support iş deneyimi",
     "fact3": "Yapay Zeka & Makine Öğrenmesi tutkunu"
   },
   "skills": {
@@ -62,7 +62,7 @@
   "blog": {
     "title": "Blog",
     "number": "07.",
-    "description": "Web geliştirme, yazılım mühendisliği ve teknoloji hakkında düşünceler, öğreticiler ve içgörüler.",
+    "description": "Yazılım geliştirme, DevOps ve teknoloji üzerine kişisel deneyimler, öğreticiler ve notlar.",
     "readMore": "Devamını Oku",
     "backToBlog": "Blog'a Dön",
     "published": "Yayınlanma",
@@ -73,7 +73,7 @@
   "contact": {
     "title": "İletişime Geçin",
     "number": "08.",
-    "description": "Şu anda staj, yarı zamanlı, tam zamanlı pozisyonlar ve heyecan verici işbirlikleri için açığım. Aklınızda bir proje, iş fırsatı varsa veya sadece bağlantı kurmak istiyorsanız, sizden haber almayı çok isterim!",
+    "description": "Staj, part-time veya full-time pozisyonlar için müsaitim. Proje teklifleri, iş fırsatları veya sadece merhaba demek için ulaşabilirsiniz.",
     "formTitle": "Mesaj Gönderin",
     "connectTitle": "Bağlantı Kurun",
     "sendMessage": "Mesaj Gönder",
@@ -96,4 +96,3 @@
     "close": "Kapat"
   }
 }
-
