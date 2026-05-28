@@ -88,7 +88,7 @@ export const Navbar = () => {
             className="text-xl font-bold font-mono text-foreground hover:text-primary transition-colors cursor-pointer"
           >
             <span className="text-muted-foreground">&lt;</span>
-            Portfolio
+            Ömer Doğan
             <span className="text-muted-foreground">/&gt;</span>
           </a>
 

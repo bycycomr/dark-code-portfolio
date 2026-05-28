@@ -10,6 +10,12 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "TRMedLLM: Türkçe Halk Ağzını Anlayan Tıbbi Büyük Dil Modeli",
+    description:
+      "Hastaların semptomlarını ifade ederken kullandıkları gündelik dili, yerel ağızları ve dolaylı anlatımları analiz ederek standart tıbbi literatür karşılıklarıyla eşleştiren özelleştirilmiş yapay zeka modeli. Türkçenin morfolojik yapısına ve hasta-doktor iletişimindeki kültürel nüanslara odaklanılarak Unsloth + LoRA ile ince ayar yapıldı. RAG mimarisi entegrasyonu ile halüsinasyon oranı düşürülmesi hedeflenmektedir.",
+    tech: ["Python", "LLM Fine-Tuning", "LoRA", "Unsloth", "LangChain", "RAG", "NLP", "Vector Database"],
+  },
+  {
     name: "DigiCampus – DigiEduHack 2024",
     description:
       "Avrupa Birliği tarafından düzenlenen uluslararası DigiEduHack 2024 hackathonunda Yerel Kazanan seçilen projedir. Fikir geliştirmeden web geliştirme, içerik üretimi ve ekip koordinasyonuna kadar tüm süreçleri yönettim.",
