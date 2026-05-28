@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, ArrowLeft, Clock } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Navbar } from "@/components/portfolio/Navbar";
+import { Navbar } from "@/components/layout/Navbar";
 import { blogPosts } from "@/data/blog";
 
 const BlogPost = () => {
