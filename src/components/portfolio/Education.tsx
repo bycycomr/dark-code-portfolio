@@ -10,7 +10,7 @@ const educations = [
   {
     degree: "Bilgisayar Mühendisliği",
     school: "Ankara Üniversitesi",
-    period: "4/4 - Devam Ediyor",
+    period: "Lisans · Mezun",
     link: "https://www.ankara.edu.tr/",
     logo: ankaraUniLogo,
     points: [
@@ -48,9 +48,8 @@ export const Education = () => {
             <span className="text-muted-foreground font-mono text-xl">{t("education.number")}</span> {t("education.title")}
           </h2>
 
-          <div className="space-y-8 relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-accent/30 hidden sm:block" />
+          <div className="space-y-6 relative">
+            <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-accent/50 via-accent/20 to-transparent hidden sm:block" />
 
             {educations.map((edu, index) => (
               <motion.div
@@ -59,47 +58,44 @@ export const Education = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="relative"
+                className="relative sm:pl-14"
               >
-                <div className="absolute left-0 top-6 w-3 h-3 bg-accent rounded-full border-4 border-background hidden sm:block -translate-x-[5px]" />
+                <div className="absolute left-3 top-5 w-5 h-5 bg-background border-2 border-accent rounded-full hidden sm:flex items-center justify-center">
+                  <div className="w-2 h-2 bg-accent rounded-full" />
+                </div>
 
-                <Card className="p-4 sm:p-6 glass border-2 border-accent/10 hover:border-accent transition-all duration-300 sm:ml-8">
-                  <div className="flex gap-3 sm:gap-4 mb-4">
-                    {/* School Logo */}
-                    <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
+                <Card className="p-5 sm:p-6 glass border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
+                  <div className="flex gap-4 mb-4">
+                    <div className="w-11 h-11 rounded-lg bg-white/5 border border-border flex items-center justify-center overflow-hidden flex-shrink-0">
                       {edu.logo ? (
-                        <img 
-                          src={edu.logo} 
+                        <img
+                          src={edu.logo}
                           alt={edu.school}
-                          className="w-7 h-7 sm:w-10 sm:h-10 object-contain"
+                          className="w-8 h-8 object-contain"
                         />
                       ) : (
-                        <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />
+                        <GraduationCap className="w-5 h-5 text-accent" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex flex-col gap-1 sm:gap-2">
-                        <div>
-                          <h3 className="text-base sm:text-xl font-bold text-foreground">{edu.degree}</h3>
-                          <a 
-                            href={edu.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-accent text-sm sm:text-base font-semibold hover:underline inline-flex items-center gap-1"
-                          >
-                            <span className="truncate">{edu.school}</span>
-                            <ExternalLink className="h-3 w-3 flex-shrink-0" />
-                          </a>
-                        </div>
-                        <div className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm font-mono">
-                          <GraduationCap className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                          <span className="truncate">{edu.period}</span>
-                        </div>
+                      <h3 className="text-base sm:text-lg font-bold text-foreground leading-tight">{edu.degree}</h3>
+                      <a
+                        href={edu.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent text-sm font-semibold hover:underline inline-flex items-center gap-1 mt-0.5"
+                      >
+                        {edu.school}
+                        <ExternalLink className="h-3 w-3 flex-shrink-0" />
+                      </a>
+                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-mono mt-1.5">
+                        <GraduationCap className="h-3 w-3 flex-shrink-0" />
+                        <span>{edu.period}</span>
                       </div>
                     </div>
                   </div>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5 border-t border-border pt-3">
                     {edu.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start gap-2 sm:gap-3 text-muted-foreground text-sm sm:text-base">
                         <span className="text-accent mt-1 sm:mt-1.5 font-mono text-xs">▹</span>
