@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Send, Globe, BookOpen, Phone } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Globe, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -15,12 +15,6 @@ const contactLinks = [
     icon: Mail,
     href: "mailto:omerr.dogan11@gmail.com",
     label: "omerr.dogan11@gmail.com",
-  },
-  {
-    name: "Telefon",
-    icon: Phone,
-    href: "tel:+905056778544",
-    label: "+90 505 677 85 44",
   },
   {
     name: "LinkedIn",

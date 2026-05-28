@@ -153,7 +153,7 @@ export const Hero = () => {
                     <span className="text-foreground font-semibold">{t("hero.mainStack")}</span>
                   </div>
                   <div className="pl-5 grid grid-cols-2 gap-x-2 gap-y-1">
-                    {["Python", "JavaScript", "React", "Spring Boot", "AWS", "Linux"].map((tech) => (
+                    {["Python", "Java/Spring Boot", "C#/.NET", "LangChain", "Docker", "Linux"].map((tech) => (
                       <span key={tech} className="text-xs font-mono text-primary/80">
                         · {tech}
                       </span>

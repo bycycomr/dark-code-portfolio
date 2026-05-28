@@ -13,8 +13,8 @@
   "hero": {
     "greeting": "const developer = {",
     "name": "Ömer Doğan",
-    "title": "Yazılım Mühendisi & Full-Stack Geliştirici",
-    "description": "Bilgisayar Mühendisliği mezunu. React, Python ve AWS ile uygulamalar geliştiriyor; DevOps süreçleri, yapay zeka ve açık kaynak teknolojilerine tutkuyla ilgi duyuyorum.",
+    "title": "Backend & AI Yazılım Mühendisi",
+    "description": "Ankara Üniversitesi Bilgisayar Mühendisliği son sınıf öğrencisi. Java (Spring Boot), C# (.NET) ve Python ekosistemlerinde ölçeklenebilir backend mimarileri ve LLM tabanlı uygulamalar geliştiriyorum.",
     "downloadCV": "CV İndir",
     "viewProjects": "Projeleri Gör",
     "location": "Ankara, Türkiye",
@@ -27,11 +27,11 @@
   "about": {
     "title": "Hakkımda",
     "number": "01.",
-    "description": "Bilgisayar Mühendisliği lisans eğitimimi tamamladım. Frontend geliştirme, DevOps ve IT alanlarında pratik iş deneyimi edindim. Takım çalışmasına uyumlu, sorumluluk alabilen ve problem çözme odaklı bir yapıya sahibim.",
-    "description2": "Hedefim, edindiğim bilgi ve deneyimlerin üzerine katarak donanımlı bir yazılım geliştirici olmak; ilerleyen süreçlerde yapay zeka ve veri bilimi alanlarında uzmanlaşmaktır.",
-    "fact1": "Bilgisayar Mühendisliği Mezunu — Ankara Üniversitesi",
-    "fact2": "Frontend, DevOps ve IT Support iş deneyimi",
-    "fact3": "Yapay Zeka & Makine Öğrenmesi tutkunu"
+    "description": "Ankara Üniversitesi Bilgisayar Mühendisliği son sınıf öğrencisiyim. Java (Spring Boot), C# (.NET) ve Python ekosistemlerinde ölçeklenebilir backend mimarileri ve LLM (Büyük Dil Modelleri) tabanlı uygulamalar geliştirmekteyim. Sistem yönetimi ve IT altyapı tecrübemi, modern yazılım geliştirme süreçleriyle birleştirerek uçtan uca çözümler üretmeyi hedefliyorum.",
+    "description2": "Öğrenmeye açık, analitik düşünen ve takım çalışmasına yatkın bir mühendis adayıyım. RAG mimarileri, agentic iş akışları ve LLM fine-tuning alanlarında derinleşmeyi hedefliyorum.",
+    "fact1": "Ankara Üniversitesi Bilgisayar Mühendisliği — 4. Sınıf",
+    "fact2": "AI Backend, RAG & LLM Uygulama Geliştirme",
+    "fact3": "NL2SQL, Fine-Tuning & Agentic Sistemler"
   },
   "skills": {
     "title": "Yetenekler & Teknolojiler",
