@@ -54,10 +54,17 @@ export default {
         subtle: {
           accent: "hsl(var(--subtle-accent))",
         },
+        signal: "hsl(var(--signal))",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Chakra Petch', 'Poppins', 'system-ui', 'sans-serif'],
+        display: ['Chakra Petch', 'system-ui', 'sans-serif'],
+        body: ['Poppins', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
+      boxShadow: {
+        neon: 'var(--neon-crimson)',
+        'neon-soft': 'var(--neon-crimson-soft)',
       },
       borderRadius: {
         lg: "var(--radius)",

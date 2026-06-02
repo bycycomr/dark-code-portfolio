@@ -77,7 +77,7 @@ export const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass border-b border-border shadow-sm" : "bg-background/80 backdrop-blur-sm"
+        isScrolled ? "glass border-b border-primary/30 shadow-sm" : "bg-background/80 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,11 +85,11 @@ export const Navbar = () => {
           <a 
             href="#home" 
             onClick={(e) => handleHashClick(e, "#home")}
-            className="text-xl font-bold font-mono text-foreground hover:text-primary transition-colors cursor-pointer"
+            className="text-xl font-bold font-mono text-foreground neon hover:brightness-125 transition cursor-pointer"
           >
-            <span className="text-muted-foreground">&lt;</span>
+            <span className="text-primary">&lt;</span>
             Ömer Doğan
-            <span className="text-muted-foreground">/&gt;</span>
+            <span className="text-primary">/&gt;</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -100,7 +100,7 @@ export const Navbar = () => {
                   <Link
                     key={item.key}
                     to={item.href}
-                    className="text-xs xl:text-sm font-medium text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
+                    className="text-xs xl:text-sm font-semibold uppercase tracking-wide text-muted-foreground hover:text-primary hover:[text-shadow:var(--neon-text)] transition-colors whitespace-nowrap"
                   >
                     {t(`nav.${item.key}`)}
                   </Link>
@@ -111,7 +111,7 @@ export const Navbar = () => {
                   key={item.key}
                   href={item.href}
                   onClick={(e) => handleHashClick(e, item.href)}
-                  className="text-xs xl:text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
+                  className="text-xs xl:text-sm font-semibold uppercase tracking-wide text-muted-foreground hover:text-primary hover:[text-shadow:var(--neon-text)] transition-colors cursor-pointer whitespace-nowrap"
                 >
                   {t(`nav.${item.key}`)}
                 </a>
@@ -167,7 +167,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden glass border-t border-border">
+        <div className="lg:hidden glass border-t border-primary/30">
           <div className="container mx-auto px-4 py-4 space-y-3">
             {navItems.map((item) => {
               if (item.href.startsWith("/")) {
@@ -175,7 +175,7 @@ export const Navbar = () => {
                   <Link
                     key={item.key}
                     to={item.href}
-                    className="block text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                    className="block text-sm font-semibold uppercase tracking-wide text-muted-foreground hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {t(`nav.${item.key}`)}
@@ -190,7 +190,7 @@ export const Navbar = () => {
                     handleHashClick(e, item.href);
                     setIsMobileMenuOpen(false);
                   }}
-                  className="block text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                  className="block text-sm font-semibold uppercase tracking-wide text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                 >
                   {t(`nav.${item.key}`)}
                 </a>

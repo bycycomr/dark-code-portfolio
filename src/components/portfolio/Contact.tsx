@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useTranslation } from "react-i18next";
 import { useToast } from "@/hooks/use-toast";
+import { SectionHeading } from "./SectionHeading";
 
 const contactLinks = [
   {
@@ -83,10 +84,7 @@ export const Contact = () => {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-center">
-            <span className="text-muted-foreground font-mono text-xl">{t("contact.number")}</span>{" "}
-            {t("contact.title")}
-          </h2>
+          <SectionHeading number={t("contact.number")} title={t("contact.title")} align="center" className="mb-3" />
           <p className="text-center text-muted-foreground text-sm mb-10 max-w-lg mx-auto">
             {t("contact.description")}
           </p>
@@ -99,8 +97,8 @@ export const Contact = () => {
               transition={{ delay: 0.2, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Card className="p-6 sm:p-8 glass border border-border h-full">
-                <h3 className="text-lg font-bold mb-5">{t("contact.formTitle")}</h3>
+              <Card className="p-6 sm:p-8 border-0 hud-card rounded-none h-full">
+                <h3 className="text-lg font-bold mb-5 uppercase tracking-wide">{t("contact.formTitle")}</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-1.5">
                     <Label htmlFor="name" className="text-sm">{t("contact.name")}</Label>
@@ -111,7 +109,7 @@ export const Contact = () => {
                       onChange={handleChange}
                       placeholder={t("contact.namePlaceholder")}
                       required
-                      className="bg-secondary/40 border-border focus:border-primary h-10"
+                      className="bg-secondary/40 border-border focus:border-primary rounded-none h-10"
                     />
                   </div>
                   <div className="space-y-1.5">
@@ -124,7 +122,7 @@ export const Contact = () => {
                       onChange={handleChange}
                       placeholder={t("contact.emailPlaceholder")}
                       required
-                      className="bg-secondary/40 border-border focus:border-primary h-10"
+                      className="bg-secondary/40 border-border focus:border-primary rounded-none h-10"
                     />
                   </div>
                   <div className="space-y-1.5">
@@ -137,13 +135,13 @@ export const Contact = () => {
                       placeholder={t("contact.messagePlaceholder")}
                       required
                       rows={5}
-                      className="bg-secondary/40 border-border focus:border-primary resize-none"
+                      className="bg-secondary/40 border-border focus:border-primary rounded-none resize-none"
                     />
                   </div>
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full group gradient-bg text-white hover:opacity-90 shadow-lg shadow-primary/20"
+                    className="w-full group gradient-bg text-white hud-btn uppercase tracking-wide font-semibold"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
@@ -166,8 +164,8 @@ export const Contact = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Card className="p-6 sm:p-8 glass border border-border h-full">
-                <h3 className="text-lg font-bold mb-5">{t("contact.connectTitle")}</h3>
+              <Card className="p-6 sm:p-8 border-0 hud-card rounded-none h-full">
+                <h3 className="text-lg font-bold mb-5 uppercase tracking-wide">{t("contact.connectTitle")}</h3>
                 <div className="grid grid-cols-1 gap-2.5">
                   {contactLinks.map((link, index) => (
                     <motion.div
@@ -181,7 +179,7 @@ export const Contact = () => {
                         href={link.href}
                         target={link.href.startsWith("mailto") || link.href.startsWith("tel") ? "_self" : "_blank"}
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-3 rounded-lg bg-secondary/30 hover:bg-primary/10 border border-transparent hover:border-primary/30 transition-all duration-200 group"
+                        className="flex items-center gap-3 p-3 rounded-none bg-secondary/30 hover:bg-primary/10 border border-border hover:border-primary transition-all duration-200 group"
                       >
                         <link.icon className="h-4 w-4 text-primary flex-shrink-0" />
                         <div className="min-w-0">

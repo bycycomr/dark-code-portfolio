@@ -30,9 +30,14 @@ const Index = () => {
   }, [location.hash]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-x-hidden">
+      {/* Page-wide cyberpunk atmosphere: crimson glow, code-grid mesh, CRT scanlines */}
+      <div className="page-glow" aria-hidden="true" />
+      <div className="page-grid" aria-hidden="true" />
+      <div className="page-scan" aria-hidden="true" />
+
       <Navbar />
-      <main>
+      <main className="relative z-[2]">
         <Hero />
         <About />
         <Skills />

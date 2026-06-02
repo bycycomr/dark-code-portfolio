@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { GraduationCap, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import { SectionHeading } from "./SectionHeading";
 
 // Import logo
 import ankaraUniLogo from "@/logos/ankarauni.png";
@@ -44,12 +45,10 @@ export const Education = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-muted-foreground font-mono text-xl">{t("education.number")}</span> {t("education.title")}
-          </h2>
+          <SectionHeading number={t("education.number")} title={t("education.title")} />
 
           <div className="space-y-6 relative">
-            <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-accent/50 via-accent/20 to-transparent hidden sm:block" />
+            <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/30 to-transparent shadow-neon-soft hidden sm:block" />
 
             {educations.map((edu, index) => (
               <motion.div
@@ -60,13 +59,13 @@ export const Education = () => {
                 viewport={{ once: true }}
                 className="relative sm:pl-14"
               >
-                <div className="absolute left-3 top-5 w-5 h-5 bg-background border-2 border-accent rounded-full hidden sm:flex items-center justify-center">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
+                <div className="absolute left-3 top-5 w-5 h-5 bg-background border-2 border-primary rounded-full shadow-neon-soft hidden sm:flex items-center justify-center">
+                  <div className="w-2 h-2 bg-primary rounded-full" />
                 </div>
 
-                <Card className="p-5 sm:p-6 glass border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
+                <Card className="p-5 sm:p-6 border-0 hud-card rounded-none">
                   <div className="flex gap-4 mb-4">
-                    <div className="w-11 h-11 rounded-lg bg-white/5 border border-border flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <div className="w-11 h-11 rounded-none bg-white/5 border border-border flex items-center justify-center overflow-hidden flex-shrink-0">
                       {edu.logo ? (
                         <img
                           src={edu.logo}
@@ -74,7 +73,7 @@ export const Education = () => {
                           className="w-8 h-8 object-contain"
                         />
                       ) : (
-                        <GraduationCap className="w-5 h-5 text-accent" />
+                        <GraduationCap className="w-5 h-5 text-primary" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -83,7 +82,7 @@ export const Education = () => {
                         href={edu.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-accent text-sm font-semibold hover:underline inline-flex items-center gap-1 mt-0.5"
+                        className="text-primary text-sm font-semibold hover:[text-shadow:var(--neon-text)] hover:underline inline-flex items-center gap-1 mt-0.5"
                       >
                         {edu.school}
                         <ExternalLink className="h-3 w-3 flex-shrink-0" />

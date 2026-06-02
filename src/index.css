@@ -2,40 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================================
+   ÖMER DOĞAN — CRIMSON PORTFOLIO DESIGN SYSTEM
+   Cyberpunk-flavored, dark-only brand: black · graphite · crimson.
+   Fonts: Chakra Petch (display/UI) + Poppins (alt body) + JetBrains Mono (code).
+   ============================================================================ */
+
+/* ----- FONTS (self-hosted, served from /public/fonts) -------------------- */
+@font-face { font-family: 'Chakra Petch'; font-weight: 300; font-style: normal;
+  src: url('/fonts/ChakraPetch-Light.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 400; font-style: normal;
+  src: url('/fonts/ChakraPetch-Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 500; font-style: normal;
+  src: url('/fonts/ChakraPetch-Medium.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 600; font-style: normal;
+  src: url('/fonts/ChakraPetch-SemiBold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 700; font-style: normal;
+  src: url('/fonts/ChakraPetch-Bold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 400; font-style: italic;
+  src: url('/fonts/ChakraPetch-Italic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 600; font-style: italic;
+  src: url('/fonts/ChakraPetch-SemiBoldItalic.ttf') format('truetype'); font-display: swap; }
+
+@font-face { font-family: 'Poppins'; font-weight: 300; font-style: normal;
+  src: url('/fonts/Poppins-Light.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-weight: 400; font-style: normal;
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-weight: 500; font-style: normal;
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-weight: 600; font-style: normal;
+  src: url('/fonts/Poppins-SemiBold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-weight: 700; font-style: normal;
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-weight: 800; font-style: normal;
+  src: url('/fonts/Poppins-ExtraBold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-weight: 400; font-style: italic;
+  src: url('/fonts/Poppins-Italic.ttf') format('truetype'); font-display: swap; }
+
 @layer base {
   :root {
-    --background: 222 20% 5%;
-    --foreground: 210 20% 96%;
+    /* ---- Semantic color tokens (HSL channels for Tailwind hsl(var(--x))) --- */
+    --background: 220 10% 6%;          /* ink-900  #0D0E10 */
+    --background-deep: 210 11% 4%;     /* ink-950  #08090A */
+    --foreground: 220 14% 91%;         /* ink-100  #E6E8EC */
+    --foreground-strong: 220 16% 96%;  /* ink-050  #F4F5F7 */
 
-    --card: 222 16% 9%;
-    --card-foreground: 210 20% 96%;
+    --card: 225 9% 8%;                 /* ink-850  #131417 */
+    --card-foreground: 220 14% 91%;
 
-    --popover: 222 16% 9%;
-    --popover-foreground: 210 20% 96%;
+    --popover: 220 11% 11%;            /* ink-800  #191B1F */
+    --popover-foreground: 220 14% 91%;
 
-    --primary: 199 98% 52%;
-    --primary-foreground: 222 20% 5%;
+    --primary: 356 77% 50%;            /* crimson-500 #E11D2A */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 356 88% 59%;      /* crimson-400 #F23B47 */
+    --primary-pressed: 356 83% 42%;    /* crimson-600 #C2121F */
 
-    --secondary: 222 14% 12%;
-    --secondary-foreground: 210 20% 96%;
+    --secondary: 220 12% 14%;          /* surface-hover #202329 */
+    --secondary-foreground: 220 14% 91%;
 
-    --muted: 222 14% 12%;
-    --muted-foreground: 215 14% 58%;
+    --muted: 220 11% 11%;
+    --muted-foreground: 217 7% 50%;    /* ink-400  #767D88 */
 
-    --accent: 174 72% 48%;
-    --accent-foreground: 210 20% 96%;
+    --accent: 356 77% 50%;             /* crimson is the only accent */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 20% 96%;
+    --destructive: 356 77% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 222 12% 16%;
-    --input: 222 12% 16%;
-    --ring: 199 98% 52%;
+    --border: 218 12% 18%;             /* ink-700  #292D34 */
+    --input: 218 12% 18%;
+    --ring: 356 77% 50%;
+
+    --code-bg: 220 13% 4%;             /* #0A0B0D */
+    --code-text: 215 11% 79%;          /* ink-200  #C4C9D0 */
+    --subtle-accent: 356 88% 59%;
+
+    /* sparing "data" accent — status dots / HUD ticks only (cyber-cyan #36D399) */
+    --signal: 158 64% 52%;
 
     --radius: 0.75rem;
 
-    --gradient-from: 199 98% 52%;
-    --gradient-to: 174 72% 48%;
+    --gradient-from: 356 77% 50%;      /* #E11D2A */
+    --gradient-to: 356 83% 35%;        /* deep crimson #A50F1A */
+
+    /* ---- Cyberpunk FX (raw values) ------------------------------------- */
+    --gradient-brand: linear-gradient(135deg, hsl(356 77% 50%) 0%, hsl(356 83% 35%) 100%);
+    --glow-crimson:   radial-gradient(ellipse at 25% 12%, rgba(225,29,42,0.14), transparent 55%);
+    --glow-crimson-2: radial-gradient(ellipse at 80% 88%, rgba(194,18,31,0.10), transparent 55%);
+    --grid-overlay:
+      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+    --grid-size: 48px 48px;
+
+    --neon-crimson: 0 0 4px rgba(242,59,71,.65), 0 0 14px rgba(225,29,42,.5), 0 0 30px rgba(225,29,42,.28);
+    --neon-crimson-soft: 0 0 2px rgba(242,59,71,.5), 0 0 10px rgba(225,29,42,.32);
+    --neon-text: 0 0 6px rgba(242,59,71,.55), 0 0 18px rgba(225,29,42,.35);
+    --neon-cyan: 0 0 4px rgba(54,211,153,.6), 0 0 14px rgba(54,211,153,.35);
+
+    --scanlines: repeating-linear-gradient(0deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 2px, rgba(0,0,0,.18) 3px, rgba(0,0,0,0) 4px);
+    --chamfer:    polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+    --chamfer-sm: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --dur: 250ms;
+
+    --glass-bg: rgba(13, 14, 16, 0.72);
+    --glass-blur: 14px;
   }
 }
 
@@ -46,7 +119,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Chakra Petch', 'Poppins', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
   }
 
@@ -58,33 +131,43 @@
     scroll-behavior: smooth;
   }
 
-  /* Scrollbar */
+  /* Scrollbar — crimson HUD */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
+    background: hsl(var(--background-deep));
   }
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--border));
-    border-radius: 3px;
+    border-radius: 0;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary) / 0.5);
+    background: hsl(var(--primary));
   }
 
   /* Selection */
   ::selection {
-    background: hsl(var(--primary) / 0.25);
-    color: hsl(var(--foreground));
+    background: hsl(var(--primary) / 0.3);
+    color: #fff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-@layer utilities {
+@layer components {
+  /* ---- Glass / gradient (brand signatures) -------------------------------- */
   .glass {
-    background: rgba(12, 16, 26, 0.75);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
   }
 
   .gradient-text {
@@ -97,6 +180,107 @@
   .gradient-bg {
     background: linear-gradient(135deg, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
   }
+
+  /* ---- Neon text glows ---------------------------------------------------- */
+  .neon        { text-shadow: var(--neon-text); }
+  .neon-strong { color: #FFE8E9; text-shadow: var(--neon-crimson); }
+  .neon-cyan   { color: hsl(var(--signal)); text-shadow: var(--neon-cyan); }
+
+  /* ---- Chamfered HUD panel: notched corners + masked neon edge ----------- */
+  .hud-card {
+    position: relative;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    clip-path: var(--chamfer);
+    transition: filter var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+  }
+  .hud-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    background: linear-gradient(150deg, hsl(var(--primary) / 0.42), hsl(var(--border) / 0.7) 55%);
+    clip-path: var(--chamfer);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    transition: background var(--dur) var(--ease-out);
+  }
+  .hud-card:hover {
+    filter: drop-shadow(0 0 10px rgba(225, 29, 42, 0.35));
+  }
+  .hud-card:hover::before {
+    background: linear-gradient(150deg, hsl(var(--primary)), hsl(var(--primary) / 0.4));
+  }
+  /* small-chamfer variant for compact cards */
+  .hud-card-sm { clip-path: var(--chamfer-sm); }
+  .hud-card-sm::before { clip-path: var(--chamfer-sm); }
+
+  /* ---- Chamfer clips for interactive elements ---------------------------- */
+  .hud-clip    { position: relative; clip-path: var(--chamfer-sm); }
+  .hud-clip-lg { position: relative; clip-path: var(--chamfer); }
+
+  /* masked chamfered neon border — inherits the element's own clip-path */
+  .hud-edge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.35));
+    clip-path: inherit;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    transition: background var(--dur) var(--ease-out);
+  }
+
+  /* primary chamfered CTA — gradient fill + lift + neon glow */
+  .hud-btn {
+    position: relative;
+    clip-path: var(--chamfer-sm);
+    transition: filter var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+  }
+  .hud-btn:hover { transform: translateY(-2px); filter: brightness(1.08) drop-shadow(0 0 10px rgba(225,29,42,0.45)); }
+  .hud-btn:active { transform: translateY(0); filter: brightness(0.94); }
+
+  /* ---- Corner-bracket HUD framing — ⌐ ¬ ticks ---------------------------- */
+  .brackets::before, .brackets::after {
+    content: "";
+    position: absolute;
+    width: 14px; height: 14px;
+    border: 1.5px solid hsl(var(--primary));
+    pointer-events: none;
+  }
+  .brackets::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+  .brackets::after  { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+  /* ---- Glitch shudder (use rarely) --------------------------------------- */
+  .glitch { position: relative; }
+  .glitch:hover { animation: glitch-shudder .28s steps(2) 1; }
+  @keyframes glitch-shudder {
+    0% { transform: translate(0,0); } 25% { transform: translate(-1px,1px); }
+    50% { transform: translate(1px,-1px); } 75% { transform: translate(-1px,0); }
+    100% { transform: translate(0,0); }
+  }
+
+  /* ---- Page-wide cyberpunk atmosphere ------------------------------------ */
+  .page-glow { position: fixed; inset: 0; background: var(--glow-crimson), var(--glow-crimson-2); pointer-events: none; z-index: 0; }
+  .page-grid { position: fixed; inset: 0; background-image: var(--grid-overlay); background-size: var(--grid-size);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000, transparent 75%);
+            mask-image: radial-gradient(ellipse at 50% 0%, #000, transparent 75%);
+    opacity: .6; pointer-events: none; z-index: 0; }
+  .page-scan { position: fixed; inset: 0; background: var(--scanlines); background-size: 100% 4px; opacity: .3;
+    pointer-events: none; z-index: 1; mix-blend-mode: overlay; }
+}
+
+@layer utilities {
+  /* mono section-number eyebrow, e.g. "03." */
+  .section-number { color: hsl(var(--primary)); text-shadow: var(--neon-text); }
 
   .section-fade {
     @apply py-20 px-4 sm:px-6 lg:px-8;

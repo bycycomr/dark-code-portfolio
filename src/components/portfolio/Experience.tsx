@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "react-i18next";
 import { experiences } from "@/data/experiences";
+import { SectionHeading } from "./SectionHeading";
 
 export const Experience = () => {
   const { t } = useTranslation();
@@ -18,13 +19,10 @@ export const Experience = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-muted-foreground font-mono text-xl">{t("experience.number")}</span>{" "}
-            {t("experience.title")}
-          </h2>
+          <SectionHeading number={t("experience.number")} title={t("experience.title")} />
 
           <div className="space-y-6 relative">
-            <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent hidden sm:block" />
+            <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/30 to-transparent shadow-neon-soft hidden sm:block" />
 
             {experiences.map((exp, index) => (
               <motion.div
@@ -35,13 +33,13 @@ export const Experience = () => {
                 viewport={{ once: true }}
                 className="relative sm:pl-14"
               >
-                <div className="absolute left-3 top-5 w-5 h-5 bg-background border-2 border-primary rounded-full hidden sm:flex items-center justify-center">
+                <div className="absolute left-3 top-5 w-5 h-5 bg-background border-2 border-primary rounded-full shadow-neon-soft hidden sm:flex items-center justify-center">
                   <div className="w-2 h-2 bg-primary rounded-full" />
                 </div>
 
-                <Card className="p-5 sm:p-6 glass border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                <Card className="p-5 sm:p-6 border-0 hud-card rounded-none">
                   <div className="flex gap-4 mb-4">
-                    <div className="w-11 h-11 rounded-lg bg-white/5 border border-border flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <div className="w-11 h-11 rounded-none bg-white/5 border border-border flex items-center justify-center overflow-hidden flex-shrink-0">
                       <img
                         src={exp.logo}
                         alt={exp.company}
@@ -60,7 +58,7 @@ export const Experience = () => {
                         href={exp.companyLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary text-sm font-semibold hover:underline inline-flex items-center gap-1 mt-0.5"
+                        className="text-primary text-sm font-semibold hover:[text-shadow:var(--neon-text)] hover:underline inline-flex items-center gap-1 mt-0.5"
                       >
                         {exp.company}
                         <ExternalLink className="h-3 w-3 flex-shrink-0" />
@@ -70,7 +68,7 @@ export const Experience = () => {
                           <Briefcase className="h-3 w-3" />
                           {exp.subtitle}
                         </span>
-                        <Badge variant="outline" className="text-xs border-primary/20 text-muted-foreground font-mono h-5 px-2">
+                        <Badge variant="outline" className="text-xs rounded-none border-primary/30 text-muted-foreground font-mono h-5 px-2">
                           <Calendar className="h-2.5 w-2.5 mr-1" />
                           {exp.dateRange}
                         </Badge>

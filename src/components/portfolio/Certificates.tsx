@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "react-i18next";
 import { certificates } from "@/data/certificates";
+import { SectionHeading } from "./SectionHeading";
 
 export const Certificates = () => {
   const { t } = useTranslation();
@@ -18,10 +19,7 @@ export const Certificates = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-muted-foreground font-mono text-xl">{t("certificates.number")}</span>{" "}
-            {t("certificates.title")}
-          </h2>
+          <SectionHeading number={t("certificates.number")} title={t("certificates.title")} />
 
           <div className="grid md:grid-cols-2 gap-5">
             {certificates.map((cert, index) => (
@@ -33,9 +31,9 @@ export const Certificates = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
               >
-                <Card className="p-5 h-full glass border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                <Card className="p-5 h-full border-0 hud-card rounded-none">
                   <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-secondary/60 border border-border flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <div className="w-14 h-14 rounded-none bg-secondary/60 border border-border flex items-center justify-center overflow-hidden flex-shrink-0">
                       <img
                         src={cert.logo}
                         alt={cert.issuer}
@@ -51,7 +49,7 @@ export const Certificates = () => {
                       <div className="flex items-start justify-between gap-2 mb-1">
                         <h3 className="text-base font-bold text-foreground leading-tight">{cert.name}</h3>
                         {cert.year && (
-                          <Badge variant="outline" className="text-xs border-border text-muted-foreground font-mono shrink-0 flex items-center gap-1">
+                          <Badge variant="outline" className="text-xs rounded-none border-border text-muted-foreground font-mono shrink-0 flex items-center gap-1">
                             <Calendar className="h-2.5 w-2.5" />
                             {cert.year}
                           </Badge>
@@ -67,7 +65,7 @@ export const Certificates = () => {
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs text-accent hover:text-primary transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs text-primary hover:[text-shadow:var(--neon-text)] transition-all"
                       >
                         <Award className="h-3 w-3" />
                         {t("certificates.view")}

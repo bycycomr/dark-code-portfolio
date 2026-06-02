@@ -4,23 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { useTranslation } from "react-i18next";
-import { useMemo } from "react";
-import cvEnglish from "@/CV/Omer-Dogan-CV-English.pdf";
-import cvTurkce from "@/CV/Omer-Dogan-CV-Turkce.pdf";
+import cvFile from "@/CV/Ömer_Doğan-CV05-28.pdf";
 import profileImage from "@/assets/omer.png";
 
 export const Hero = () => {
   const { t, i18n } = useTranslation();
 
-  const cvFile = useMemo(
-    () => (i18n.language === "tr" ? cvTurkce : cvEnglish),
-    [i18n.language]
-  );
-
   const downloadCV = () => {
     const link = document.createElement("a");
     link.href = cvFile;
-    link.download = `Omer-Dogan-CV-${i18n.language === "tr" ? "Turkce" : "English"}.pdf`;
+    link.download = "Omer-Dogan-CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -35,11 +28,11 @@ export const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
-      {/* Background */}
+      {/* Background — crimson ambient glow + code-grid mesh */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_15%,rgba(14,165,233,0.08),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_85%,rgba(6,182,212,0.06),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_15%,rgba(225,29,42,0.12),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_85%,rgba(194,18,31,0.08),transparent_55%)]" />
         {/* Grid overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px]" />
       </div>
@@ -60,24 +53,24 @@ export const Hero = () => {
                 transition={{ delay: 0.15 }}
                 className="text-sm font-mono text-muted-foreground"
               >
-                <span className="text-primary">const</span> developer{" "}
-                <span className="text-primary">=</span> &#123;
+                <span className="text-primary neon">const</span> developer{" "}
+                <span className="text-primary neon">=</span> &#123;
               </motion.div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25 }}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight"
+                className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight uppercase"
               >
-                <span className="gradient-text">{t("hero.name")}</span>
+                <span className="neon-strong">{t("hero.name")}</span>
               </motion.h1>
 
               <motion.h2
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
-                className="text-lg sm:text-xl md:text-2xl font-semibold text-primary/90"
+                className="text-lg sm:text-xl md:text-2xl font-semibold text-primary neon"
               >
                 {t("hero.title")}
               </motion.h2>
@@ -108,13 +101,18 @@ export const Hero = () => {
               >
                 <Button
                   size="lg"
-                  className="group gradient-bg text-white hover:opacity-90 shadow-lg shadow-primary/20"
+                  className="group gradient-bg text-white hud-btn uppercase tracking-wide font-semibold"
                   onClick={downloadCV}
                 >
                   <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
                   {t("hero.downloadCV")}
                 </Button>
-                <Button size="lg" variant="outline" onClick={scrollToProjects} className="group border-border hover:border-primary">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  onClick={scrollToProjects}
+                  className="group border-0 hud-clip hud-edge bg-transparent uppercase tracking-wide font-semibold text-foreground hover:text-primary hover:bg-primary/5"
+                >
                   {t("hero.viewProjects")}
                   <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
                 </Button>
@@ -129,16 +127,16 @@ export const Hero = () => {
             transition={{ delay: 0.35, duration: 0.6 }}
             className="lg:col-span-1"
           >
-            <Card className="p-5 glass border border-primary/20 shadow-xl hover:shadow-primary/10 transition-shadow">
+            <Card className="p-5 border-0 hud-card rounded-none">
               <div className="space-y-4">
                 <div className="flex justify-center">
-                  <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-4 border-primary/20 ring-2 ring-primary/10">
+                  <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-2 border-primary shadow-neon-soft">
                     <AvatarImage src={profileImage} alt="Ömer Doğan" className="object-cover" />
                   </Avatar>
                 </div>
 
                 <div className="text-center">
-                  <p className="font-semibold text-foreground">{t("hero.name")}</p>
+                  <p className="font-semibold text-foreground uppercase tracking-wide neon">{t("hero.name")}</p>
                   <p className="text-xs text-muted-foreground font-mono mt-0.5">{t("hero.title")}</p>
                 </div>
 
@@ -163,8 +161,8 @@ export const Hero = () => {
 
                 <div className="pt-3 border-t border-border flex items-center justify-between">
                   <span className="text-xs text-muted-foreground font-mono">{t("hero.status")}</span>
-                  <span className="flex items-center gap-1.5 text-xs font-mono text-emerald-400">
-                    <Circle className="h-2 w-2 fill-emerald-400 text-emerald-400 animate-pulse" />
+                  <span className="flex items-center gap-1.5 text-xs font-mono text-signal neon-cyan">
+                    <Circle className="h-2 w-2 fill-signal text-signal animate-pulse" />
                     {t("hero.available")}
                   </span>
                 </div>

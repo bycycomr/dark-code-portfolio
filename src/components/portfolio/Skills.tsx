@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "react-i18next";
+import { SectionHeading } from "./SectionHeading";
 
 const skillCategories = [
   {
@@ -39,10 +40,7 @@ export const Skills = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-            <span className="text-muted-foreground font-mono text-xl">{t("skills.number")}</span>{" "}
-            {t("skills.title")}
-          </h2>
+          <SectionHeading number={t("skills.number")} title={t("skills.title")} />
 
           <div className="grid sm:grid-cols-2 gap-5">
             {skillCategories.map((category, categoryIndex) => (
@@ -53,10 +51,10 @@ export const Skills = () => {
                 transition={{ delay: categoryIndex * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <Card className="p-5 h-full glass border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                <Card className="p-5 h-full border-0 hud-card rounded-none">
                   <h3 className="text-sm font-semibold mb-4 text-foreground flex items-center gap-2">
                     <span>{category.icon}</span>
-                    <span className="font-mono text-primary">{category.category}</span>
+                    <span className="font-mono text-primary neon uppercase tracking-wide">{category.category}</span>
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, skillIndex) => (
@@ -73,7 +71,7 @@ export const Skills = () => {
                       >
                         <Badge
                           variant="secondary"
-                          className="text-sm py-1.5 px-3 bg-secondary/80 border border-border hover:bg-primary/15 hover:border-primary/50 hover:text-foreground transition-all cursor-default"
+                          className="text-sm py-1.5 px-3 rounded-none font-mono bg-secondary/80 border border-border hover:bg-primary/15 hover:border-primary hover:text-foreground transition-all cursor-default"
                         >
                           {skill}
                         </Badge>
