@@ -6,6 +6,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { useTranslation } from "react-i18next";
 import cvFile from "@/CV/01.07.2026-Ömer-Doğan-Özgeçmiş.pdf";
 import profileImage from "@/assets/Ömer-Doğan.jpeg";
+import { LifeBackground } from "./LifeBackground";
 
 export const Hero = () => {
   const { t, i18n } = useTranslation();
@@ -28,9 +29,11 @@ export const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
-      {/* Background — crimson ambient glow + code-grid mesh */}
+      {/* Background — crimson ambient glow + code-grid mesh + Game of Life */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
+        {/* Conway's Game of Life — gezinen hücreler; alta doğru sönümlenir */}
+        <LifeBackground className="absolute inset-0 w-full h-full opacity-60 [mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_15%,rgba(225,29,42,0.12),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_85%,rgba(194,18,31,0.08),transparent_55%)]" />
         {/* Grid overlay */}
