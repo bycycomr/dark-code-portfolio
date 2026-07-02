@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
-import kolnImage from "@/assets/omer-koln.jpg";
 import { SectionHeading } from "./SectionHeading";
 
 const facts = [
@@ -27,26 +26,13 @@ export const About = () => {
           <SectionHeading number={t("about.number")} title={t("about.title")} className="mb-10" />
 
           <Card className="p-6 sm:p-8 border-0 hud-card rounded-none">
-            <div className="grid md:grid-cols-5 gap-8 mb-8 items-center">
-              <div className="md:col-span-3 space-y-4">
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  {t("about.description")}
-                </p>
-                <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                  {t("about.description2")}
-                </p>
-              </div>
-              <div className="md:col-span-2 flex justify-center order-first md:order-last">
-                <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 hud-clip-lg hud-edge overflow-hidden hover:[filter:drop-shadow(0_0_10px_rgba(225,29,42,0.4))] transition-all duration-300 group">
-                  <img
-                    src={kolnImage}
-                    alt="Ömer Doğan"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    style={{ objectPosition: "center 25%" }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              </div>
+            <div className="space-y-4 mb-8">
+              <p className="text-base text-muted-foreground leading-relaxed">
+                {t("about.description")}
+              </p>
+              <p className="text-sm text-muted-foreground/80 leading-relaxed">
+                {t("about.description2")}
+              </p>
             </div>
 
             <div className="grid sm:grid-cols-3 gap-3 pt-6 border-t border-border">

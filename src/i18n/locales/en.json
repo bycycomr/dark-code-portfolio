@@ -44,7 +44,8 @@
     "viewCode": "View Code",
     "code": "Code",
     "demo": "Demo",
-    "info": "Info"
+    "info": "Info",
+    "play": "Play Live"
   },
   "experience": {
     "title": "Experience",
@@ -88,7 +89,7 @@
     "successDesc": "Please send the email from your mail application.",
     "error": "Failed to send message. Please try again.",
     "footer": "",
-    "copyright": "© 2025 Ömer Doğan. All rights reserved."
+    "copyright": "© 2026 Ömer Doğan. All rights reserved."
   },
   "common": {
     "loading": "Loading...",

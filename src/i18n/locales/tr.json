@@ -44,7 +44,8 @@
     "viewCode": "Kodu Görüntüle",
     "code": "Kod",
     "demo": "Demo",
-    "info": "Bilgi"
+    "info": "Bilgi",
+    "play": "Canlı Oyna"
   },
   "experience": {
     "title": "Deneyim",
@@ -88,7 +89,7 @@
     "successDesc": "Lütfen e-postayı mail uygulamanızdan gönderin.",
     "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
     "footer": "",
-    "copyright": "© 2025 Ömer Doğan. Tüm hakları saklıdır."
+    "copyright": "© 2026 Ömer Doğan. Tüm hakları saklıdır."
   },
   "common": {
     "loading": "Yükleniyor...",

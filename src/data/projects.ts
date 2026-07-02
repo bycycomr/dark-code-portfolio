@@ -5,6 +5,8 @@ export interface Project {
   info?: string;
   demo?: string;
   code?: string;
+  /** URL to render inside an in-site iframe dialog instead of an external demo link */
+  embed?: string;
   achievement?: string;
 }
 
@@ -23,6 +25,15 @@ export const projects: Project[] = [
     info: "https://digieduhack.com/solutions/digicampus",
     demo: "https://digicampus.doktortaku.com/",
     achievement: "🏆 Yerel Kazanan",
+  },
+  {
+    name: "Game of Life — Conway Hücresel Otomatı",
+    description:
+      "Sıfır bağımlılıkla, saf JavaScript ve Canvas API kullanılarak geliştirilen kendi kendine çalışan Conway's Game of Life simülasyonu. Durağanlık ve osilasyon algılama, otomatik yeniden tohumlama, çağ tabanlı renklendirme ve simülasyon çalışırken bile tuvale canlı çizim desteği içerir.",
+    tech: ["JavaScript", "Canvas API", "HTML5", "CSS3", "Cellular Automata"],
+    demo: "https://bycycomr.github.io/Game-Of-Life-Simulation/",
+    code: "https://github.com/bycycomr/Game-Of-Life-Simulation",
+    embed: "https://bycycomr.github.io/Game-Of-Life-Simulation/",
   },
   {
     name: "Pink – Ankü Game Jam",

@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { useTranslation } from "react-i18next";
-import cvFile from "@/CV/Ömer_Doğan-CV05-28.pdf";
-import profileImage from "@/assets/omer.png";
+import cvFile from "@/CV/01.07.2026-Ömer-Doğan-Özgeçmiş.pdf";
+import profileImage from "@/assets/Ömer-Doğan.jpeg";
 
 export const Hero = () => {
   const { t, i18n } = useTranslation();

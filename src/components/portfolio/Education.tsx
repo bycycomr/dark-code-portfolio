@@ -11,23 +11,24 @@ const educations = [
   {
     degree: "Bilgisayar Mühendisliği",
     school: "Ankara Üniversitesi",
-    period: "Lisans · Mezun",
+    period: "Eylül 2022 – Haziran 2026 · GPA: 3.23",
     link: "https://www.ankara.edu.tr/",
     logo: ankaraUniLogo,
     points: [
       "Yazılım geliştirme, algoritmalar, veri yapıları, yapay zeka, işletim sistemleri alanlarında kapsamlı eğitim",
       "Çeşitli projeler ve araştırmalar ile sektöre yönelik deneyim kazanımı",
+      "Sınav Sonuçları: ALES 70 (2026/1) · YÖKDİL (İngilizce) 71.25 (Mart 2026)",
     ],
   },
   {
     degree: "Lise Eğitimi",
     school: "Cemil Meriç Fen Lisesi",
-    period: "Ortalama: 89/100 | YKS Sayısal: 16.134",
+    period: "2016 – 2020 · Ortalama: 89/100",
     link: "https://cemilmericfenlisesi.meb.k12.tr/",
     logo: null,
     points: [
       "Fen ve matematik odaklı güçlü akademik altyapı",
-      "Bilimsel düşünme ve problem çözme becerileri",
+      "YKS (Sayısal): Türkiye 16.134'üncüsü (2022)",
     ],
   },
 ];

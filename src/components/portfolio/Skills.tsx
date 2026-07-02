@@ -6,24 +6,24 @@ import { SectionHeading } from "./SectionHeading";
 
 const skillCategories = [
   {
-    category: "Programlama Dilleri",
-    icon: "⌨️",
-    skills: ["Python", "JavaScript", "TypeScript", "Java", "C"],
+    category: "Backend & Mimariler",
+    icon: "🧱",
+    skills: ["Java (Spring Boot)", "C# (.NET Core)", "RESTful APIs", "OOP", "Design Patterns"],
   },
   {
-    category: "Frontend & Backend",
-    icon: "🌐",
-    skills: ["React", "Spring Boot", "REST API", "MySQL", "HTML/CSS"],
+    category: "Yapay Zeka & Veri",
+    icon: "🤖",
+    skills: ["Python", "LLM Integration", "LangChain", "RAG", "Pandas", "NumPy"],
   },
   {
-    category: "DevOps & Sistem",
+    category: "Veritabanı",
+    icon: "🗄️",
+    skills: ["MySQL", "PostgreSQL", "Entity Framework", "Hibernate"],
+  },
+  {
+    category: "DevOps & Araçlar",
     icon: "⚙️",
-    skills: ["AWS", "Linux", "Git", "Active Directory", "SSH", "Docker"],
-  },
-  {
-    category: "Soft Skills",
-    icon: "🤝",
-    skills: ["Takım Çalışması", "Liderlik", "Problem Çözme", "Zaman Yönetimi", "İletişim"],
+    skills: ["Linux", "Docker", "Git", "CI/CD", "Active Directory", "Swagger", "Agile/Scrum"],
   },
 ];
 

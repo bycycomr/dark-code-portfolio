@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Info } from "lucide-react";
+import { Code2, ExternalLink, Info, Play } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useTranslation } from "react-i18next";
 import { projects } from "@/data/projects";
 import { SectionHeading } from "./SectionHeading";
@@ -67,13 +68,54 @@ export const Projects = () => {
                         </a>
                       </Button>
                     )}
-                    {project.demo && (
-                      <Button size="sm" className="flex-1 text-xs gradient-bg text-white hud-btn uppercase tracking-wide" asChild>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
-                          {t("projects.demo")}
+                    {project.code && (
+                      <Button variant="outline" size="sm" className="flex-1 text-xs border-0 hud-clip hud-edge bg-transparent uppercase tracking-wide text-foreground hover:text-primary hover:bg-primary/5" asChild>
+                        <a href={project.code} target="_blank" rel="noopener noreferrer">
+                          <Code2 className="mr-1.5 h-3.5 w-3.5" />
+                          {t("projects.code")}
                         </a>
                       </Button>
+                    )}
+                    {project.embed ? (
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button size="sm" className="flex-1 text-xs gradient-bg text-white hud-btn uppercase tracking-wide">
+                            <Play className="mr-1.5 h-3.5 w-3.5" />
+                            {t("projects.play")}
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="w-[95vw] max-w-6xl h-[88vh] p-0 gap-0 rounded-none border border-primary/40 bg-background shadow-neon-soft flex flex-col overflow-hidden">
+                          <div className="flex items-center justify-between gap-3 px-4 py-2.5 pr-12 border-b border-primary/30 shrink-0">
+                            <DialogTitle className="font-mono text-xs sm:text-sm font-medium text-primary tracking-wider truncate">
+                              {`// ${project.name}`}
+                            </DialogTitle>
+                            <a
+                              href={project.demo ?? project.embed}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-muted-foreground hover:text-primary transition-colors"
+                              title={t("projects.demo")}
+                            >
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                          <iframe
+                            src={project.embed}
+                            title={project.name}
+                            className="w-full flex-1 border-0 bg-background"
+                            allow="fullscreen"
+                          />
+                        </DialogContent>
+                      </Dialog>
+                    ) : (
+                      project.demo && (
+                        <Button size="sm" className="flex-1 text-xs gradient-bg text-white hud-btn uppercase tracking-wide" asChild>
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                            {t("projects.demo")}
+                          </a>
+                        </Button>
+                      )
                     )}
                   </div>
                 </Card>
